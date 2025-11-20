@@ -1,19 +1,19 @@
 ---
-copyright_text: "© 2024 Karan Mirakhor. All rights reserved."
+copyright_text: "© 2024 Gopalakrishnan Thirunellai Venkitachalam. All rights reserved."
 ---
 
 ## Social Links
 
-### Google Scholar
-- **Link**: https://scholar.google.com/citations?user=wpeFm64AAAAJ&hl=en
-- **Aria Label**: Google Scholar
+### Email
+- **Link**: mailto:gopalakt@andrew.cmu.edu
+- **Aria Label**: Email
 
 ### GitHub
-- **Link**: https://github.com/karan-13-hub
+- **Link**: https://github.com/your-username
 - **Aria Label**: GitHub
 
 ### LinkedIn
-- **Link**: https://www.linkedin.com/in/karan-mirakhor-b065b7142/
+- **Link**: https://www.linkedin.com/in/your-profile/
 - **Aria Label**: LinkedIn
 
 ## Footer Features

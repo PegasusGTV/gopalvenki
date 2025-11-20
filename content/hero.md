@@ -1,18 +1,18 @@
 ---
-name: "Karan Mirakhor"
-title: "Masters of Science (Research) in Robotics"
+name: "Gopalakrishnan Thirunellai Venkitachalam"
+title: "Master's of Science, AI & Robotics Research"
 institution: "Robotics Institute, Carnegie Mellon University"
-tagline: "Advancing multi-agent systems through belief modeling and strategic decision-making"
-profile_initials: "KM"
+tagline: "Advancing motion planning and multi-agent systems through algorithmic innovation"
+profile_initials: "GV"
 profile_image: "profile.jpeg"
 ---
 
 ## Social Links
 
-- **Google Scholar**: [https://scholar.google.com/citations?user=wpeFm64AAAAJ&hl=en](https://scholar.google.com/citations?user=wpeFm64AAAAJ&hl=en)
-- **GitHub**: [https://github.com/karan-13-hub](https://github.com/karan-13-hub)
-- **LinkedIn**: [https://www.linkedin.com/in/karan-mirakhor-b065b7142/](https://www.linkedin.com/in/karan-mirakhor-b065b7142/)
-- **Resume**: [https://drive.google.com/file/d/1KMUiU1Ze_I2ZgC0N5dFkpX_ucFn5C_G5/view?usp=sharing](https://drive.google.com/file/d/1KMUiU1Ze_I2ZgC0N5dFkpX_ucFn5C_G5/view?usp=sharing)
+- **Email**: [gopalakt@andrew.cmu.edu](mailto:gopalakt@andrew.cmu.edu)
+- **Phone**: [+1 (412) 909-7233](tel:+14129097233)
+- **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/your-profile/)
+- **GitHub**: [Your GitHub Profile](https://github.com/your-username)
 
 ## Background Elements
 

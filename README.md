@@ -1,4 +1,4 @@
-# Karan Mirakhor
+# Gopalakrishnan Thirunellai Venkitachalam
 
 A dual-framework personal research portfolio built with React (Next.js) and Vue (Vite), featuring dynamic Markdown content support for publications, projects, and awards.
 
@@ -153,8 +153,7 @@ npx vercel
 
 ## 📧 Contact
 
-- **Email**: karanmirakhor@gmail.com
-- **Google Scholar**: [Profile](https://scholar.google.com/citations?user=wpeFm64AAAAJ&hl=en)
-- **GitHub**: [karan-13-hub](https://github.com/karan-13-hub)
-- **LinkedIn**: [Profile](https://www.linkedin.com/in/karan-mirakhor-b065b7142/)
-# karan-mirakhor.github.io
+- **Email**: gopalakt@andrew.cmu.edu
+- **Phone**: +1 (412) 909-7233
+- **GitHub**: [Your GitHub Profile](https://github.com/your-username)
+- **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/your-profile/)

@@ -13,8 +13,8 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-navy">
       <Head>
-        <title>Karan Mirakhor - Research Portfolio</title>
-        <meta name="description" content="Graduate Researcher in Reinforcement Learning and Robotics at Carnegie Mellon University" />
+        <title>Gopalakrishnan Thirunellai Venkitachalam - Research Portfolio</title>
+        <meta name="description" content="Graduate Researcher in AI & Robotics Research at Carnegie Mellon University" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

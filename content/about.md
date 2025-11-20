@@ -1,63 +1,84 @@
 ---
 title: "About Me"
-current_position: "Graduate Research Assistant at the Robotics Institute, Carnegie Mellon University"
-advisor: "Prof. Katia Sycara"
-previous_position: "Pre-doctoral Research Fellow at TCS Research, India"
-education: "B.Tech (Honors) in Electronics and Communication Engineering from IIIT Hyderabad"
-achievement: "Program Gold Medal for highest GPA"
+current_position: "Graduate Research Assistant at Search Based Planning Lab, Robotics Institute, CMU"
+advisor: "Prof. Maxim Likhachev"
+previous_position: "Research Intern in ML, Control, and Data Analytics at Caterpillar Inc."
+education: "B.Tech in Mechanical Engineering with Honors from IIT Madras"
+achievement: "GPA 4.0/4.0 at CMU, GPA 8.71/10.0 at IIT Madras"
 ---
 
 ## About Me
 
-Hello! I’m Karan Mirakhor, a second-year Master of Science (Research) student in Robotics (MSR) at the [Robotics Institute](https://www.ri.cmu.edu/), [Carnegie Mellon University](https://www.cmu.edu/).
-Graduate Research Assistant - [Advanced Agent Robotics Technology Lab](https://www.ri.cmu.edu/robotics-groups/advanced-agent-robotics-technology-lab/)
-Advisor: [Prof. Katia Sycara](https://www.cs.cmu.edu/~sycara/)    
-My research primarily focuses on Multi-Agent Reinforcement Learning (MARL). Specifically, my work is on:
+Hello! I'm Gopalakrishnan Thirunellai Venkitachalam (Gopal), a Master's student in AI & Robotics Research, Mechanical Engineering at [Carnegie Mellon University](https://www.cmu.edu/). I'm currently working as a Graduate Research Assistant at the [Search Based Planning Lab](https://www.cs.cmu.edu/~maxim/), [Robotics Institute](https://www.ri.cmu.edu/), under the guidance of [Prof. Maxim Likhachev](https://www.cs.cmu.edu/~maxim/).
+
+My research focuses on developing efficient motion planning algorithms for robotics applications, with particular emphasis on real-time planning for mobile manipulators and multi-agent systems.
 
 ---
 
-🧠 Zero-shot Coordination in Cooperative MARL  
-Developing agents that can seamlessly collaborate with previously unseen partners without additional training.  
-Specifically, I focus on offline-to-online training frameworks that leverage behavioral diversity in offline datasets and enable efficient online adaptation using belief models.
+## Current Research
 
-🎭 Competitive MARL and Targeted Deception  
-Developing targeted deception strategies by leveraging higher-order opponent belief models and analyzing historical response patterns to identify and exploit individual behavioral vulnerabilities.
+🔬 **Constant Time Motion Planning (CTMP) for Mobile Manipulators**  
+Developing algorithms for optimizing dynamic task allocation and motion planning in warehouse robotics. Implementing solutions in C++ & ROS to enhance real-time adaptability and execution efficiency. Working on simulated door-opening tasks with Ridgeback UR10e teleoperation in SAPien and Maniskill, demonstrating precision for hazardous applications like nuclear waste disposal.
 
 ---
 
-## Previous Research Experience
+## Education
 
-📚 Pre-doctoral Research Fellow — [TCS Research](https://www.tcs.com/research-and-innovation)  
-Advisor: [Dr. Brojeshwar Bhowmick](https://scholar.google.co.in/citations?user=Eqf8NrEAAAAJ&hl=en)  
+🎓 **Master's of Science, AI & Robotics Research, Mechanical Engineering**  
+[Carnegie Mellon University](https://www.cmu.edu/), Pittsburgh, PA  
+*May 2026 (Expected)* | GPA: 4.0/4.0
 
-Explored Task Planning for Indoor Object Rearrangement under partial observability (POMDP). Developed scalable graph-based scene representations, utilized Large Language Models (LLMs) for semantic object search, and applied Deep RL for efficient single and multi-room planning.
-
----
-
-🎓 B.Tech (Honors) in Electronics and Communication Engineering (ECE) — [IIIT Hyderabad](https://www.iiit.ac.in/)  
-Research Assistant, [Robotics Research Center](https://robotics.iiit.ac.in/)  
-Advisor: [Dr. Harikumar Kandath](https://scholar.google.co.in/citations?user=5i1t_QgAAAAJ&hl=en)  
-
-Worked on aerial manipulator control using Control Barrier Lyapunov constraints within a Model Predictive Controller for safe and stable operation.
+**Relevant Courses**: Deep Learning, Planning & Decision-Making, Computer Vision for Robotics, Modern Control Theory
 
 ---
 
-## 🔭 Future Vision
+🎓 **Bachelor of Technology in Mechanical Engineering with Honors**  
+[Indian Institute of Technology Madras](https://www.iitm.ac.in/), Chennai, India  
+*June 2024* | GPA: 8.71/10.0 | Minor in Artificial Intelligence and Machine Learning
 
-I am fascinated by how intelligent agents can learn structured, transferable policies that generalize across tasks, embodiments, and environments, moving toward autonomous systems capable of learning and reasoning like humans.  
-
-My long-term goal is to develop generalist robot policies that unify learning, reasoning, and control, advancing adaptable embodied agents for diverse real-world tasks.
+**Relevant Courses**: Machine Learning, Reinforcement Learning, Deep Learning, Multi-Armed Bandits, Field and Service Robotics, Multi-Body Dynamics, Stochastic Processes, Signal Processing, Control of Automotive Systems, Design and Optimization
 
 ---
 
-## ☕ Beyond Research
+## Work Experience
 
-Outside the lab, I enjoy ♟️ Chess, 🏸 Squash, and 🏓 Table Tennis tennis. I’m a dedicated ☕ coffee enthusiast who enjoys strategy both on and off the board.
+📚 **Graduate Research Assistant** — [Search Based Planning Lab](https://www.cs.cmu.edu/~maxim/), Robotics Institute, CMU  
+*September 2024 – Present* | Advisor: [Prof. Maxim Likhachev](https://www.cs.cmu.edu/~maxim/)
+
+- Developing Constant Time Motion Planning (CTMP) algorithms for mobile manipulators
+- Optimizing dynamic task allocation and motion planning in warehouse robotics
+- Implementing solutions in C++ & ROS for real-time adaptability
+- Simulating door-opening tasks with Ridgeback UR10e teleoperation in SAPien and Maniskill
+
+---
+
+🏭 **Research Intern in ML, Control, and Data Analytics** — [Caterpillar Inc.](https://www.caterpillar.com/)  
+*May 2023 – January 2024* | Chennai, India
+
+- Developed MATLAB and Simulink models for predicting diesel engine exhaust gas temperature dynamics
+- Implemented Python scripts for cleaning and analyzing large-scale engine datasets using PCA and K-means clustering
+- Designed data visualization dashboard with Plotly for spectral and operational cycle analysis
+
+---
+
+## Technical Skills
+
+**Programming Languages**: C++, Python, C, MATLAB & Simulink, Linux, Git
+
+**Frameworks & Tools**: PyTorch, TensorFlow, Scikit-learn, OpenCV, MoveIt, ROS, Pandas, NumPy, SymPy, Vaex
+
+**Areas of Expertise**: Machine Learning, Deep Learning, Reinforcement Learning, Motion Planning, Computer Vision, Control Systems
+
+---
+
+## 🔭 Research Interests
+
+My research interests span motion planning, multi-agent systems, machine learning, and robotics. I'm particularly interested in developing efficient algorithms that can operate in real-time for practical robotic applications, including warehouse automation, hazardous environment operations, and multi-agent coordination.
 
 ---
 
 ## Research Statistics
 
-- **Years Research Experience**: 5+
-- **Years Job Experience**: 2+
-- **Publications & Patents**: 3+
+- **Current GPA**: 4.0/4.0 (CMU)
+- **Research Experience**: 2+ years
+- **Industry Experience**: 1+ year

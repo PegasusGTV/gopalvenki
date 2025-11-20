@@ -92,37 +92,47 @@ Award description here.
 
 ## 🚀 Deployment
 
-### GitHub Pages (Recommended)
+### GitHub Pages (Automated)
 
-#### Quick Deploy
-```bash
-# Run the deployment script
-./deploy-github.sh
-```
+This repository is configured for automatic deployment to GitHub Pages using GitHub Actions.
 
-#### Manual Deploy
-1. **Create GitHub Repository:**
-   - Go to https://github.com/new
-   - Name it `YOUR_USERNAME.github.io` (for automatic GitHub Pages)
-   - Or use any name and enable Pages in Settings
+#### Setup Instructions
 
-2. **Push to GitHub:**
+1. **Push to GitHub:**
    ```bash
    git add .
-   git commit -m "Deploy portfolio"
-   git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+   git commit -m "Deploy portfolio to GitHub Pages"
    git push -u origin main
    ```
 
-3. **Enable GitHub Pages:**
-   - Go to repository Settings > Pages
-   - Select "Deploy from a branch"
-   - Choose "main" branch and "/ (root)" folder
-   - Save and wait 2-5 minutes
+2. **Enable GitHub Pages:**
+   - Go to your repository: https://github.com/PegasusGTV/gopalvenki
+   - Click on **Settings** tab
+   - Scroll to **Pages** in the left sidebar
+   - Under **Source**, select **"GitHub Actions"**
+   - Click **Save**
 
-4. **Access Your Portfolio:**
-   - Visit: `https://YOUR_USERNAME.github.io`
-   - Or: `https://YOUR_USERNAME.github.io/YOUR_REPO_NAME` (if not using .github.io)
+3. **Verify Workflow Permissions:**
+   - In **Settings** → **Actions** → **General**
+   - Scroll to **Workflow permissions**
+   - Select **"Read and write permissions"**
+   - Check **"Allow GitHub Actions to create and approve pull requests"**
+   - Click **Save**
+
+4. **Monitor Deployment:**
+   - Go to the **Actions** tab in your repository
+   - You'll see the "Deploy to GitHub Pages" workflow running
+   - Wait for it to complete (usually 3-5 minutes)
+
+5. **Access Your Portfolio:**
+   - Once deployed, visit: **https://pegasusgtv.github.io/gopalvenki/**
+
+#### Automatic Updates
+
+After the initial setup, any push to the `main` branch will automatically:
+- Build the Next.js static site
+- Deploy to GitHub Pages
+- Update your live portfolio in 3-5 minutes
 
 ### Vercel Deployment (Alternative)
 

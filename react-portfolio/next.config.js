@@ -9,8 +9,8 @@ const nextConfig = {
   output: 'export',
   trailingSlash: true,
   distDir: 'out',
-  basePath: '/karan-mirakhor',
-  assetPrefix: '/karan-mirakhor',
+  basePath: '/gopalvenki',
+  assetPrefix: '/gopalvenki',
 }
 
 module.exports = nextConfig

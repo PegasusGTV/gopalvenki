@@ -1,18 +1,40 @@
 // Auto-generated content data
 export const contentData = {
-  "publications": [],
+  "publications": [
+    {
+      "title": "Belief",
+      "authors": "Karan Mirakhor, Katia Sycara",
+      "venue": "ICLR",
+      "year": 2026,
+      "link": "https://openreview.net/forum?id=jJvXNpvOdM",
+      "content": "We propose a novel approach to zero-shot coordination in multi-agent systems by leveraging belief modeling and opponent adaptation. Our method enables agents to coordinate effectively with unseen partners by maintaining beliefs about their strategies and adapting accordingly. The approach demonstrates significant improvements in cooperative environments with partial observability.",
+      "slug": "belief-guided-zero-shot"
+    },
+    {
+      "title": "Strategic Deception in Multi-Agent Reinforcement Learning",
+      "authors": "Karan Mirakhor, Katia Sycara, Prashant Doshi",
+      "venue": "AAMAS",
+      "year": 2025,
+      "link": "https://example.com/paper2",
+      "content": "This work explores the role of strategic deception in multi-agent reinforcement learning environments. We develop a framework for agents to learn when and how to deceive opponents while maintaining cooperation when beneficial. The approach shows improved performance in competitive scenarios with partial information.",
+      "slug": "multi-agent-deception"
+    },
+    {
+      "title": "Hierarchical Task Planning for Robotic Object Rearrangement under Partial Observability",
+      "authors": "Karan Mirakhor, TCS Research Team",
+      "venue": "ICRA",
+      "year": 2024,
+      "link": "https://example.com/paper3",
+      "content": "We present a hierarchical approach to task planning for robotic object rearrangement in partially observable environments. The method combines high-level symbolic planning with low-level motion planning, enabling robots to handle uncertainty and adapt to changing environments. Experimental results show improved success rates in cluttered indoor scenarios.",
+      "slug": "robotic-task-planning"
+    }
+  ],
   "projects": [
     {
       "title": "Financial Market Prediction",
       "link": "https://example.com/financial-market-prediction",
       "content": "Developing a Finance-Informed Neural Network for predicting SPY S&P 500 stock prices using time-series data. Leveraging FinBERT for advanced sentiment analysis of financial news, earnings reports, and market sentiment to improve prediction accuracy. This project combines deep learning techniques with financial domain knowledge to create more accurate market predictions.",
       "slug": "financial-market-prediction"
-    },
-    {
-      "title": "Speech & Face Recognition using Deep Learning",
-      "link": "https://example.com/speech-face-recognition",
-      "content": "**Face Classification & Verification**: Trained CNN models (inspired by ResNet50, ConvNeXt-T) with Transforms & CutMix, achieving a 2.793 EER. Used ArcFace loss for enhanced feature distinction and robustness.\n\n**Automatic Speech Recognition (ASR)**: Developing a phoneme recognition model using LSTM RNNs for accurate speech-to-text conversion. This project demonstrates expertise in both computer vision and natural language processing domains.",
-      "slug": "speech-face-recognition"
     },
     {
       "title": "Formation Control and Multi-Agent Pathfinding (MAPF)",
@@ -33,7 +55,26 @@ export const contentData = {
       "slug": "rl-algorithms-analysis"
     }
   ],
-  "awards": [],
+  "awards": [
+    {
+      "title": "Best Research Paper Award - TCS Research",
+      "year": 2024,
+      "content": "Recognized for outstanding contribution to robotic task planning research. The paper presented novel approaches to hierarchical planning under partial observability, with significant practical applications in service robotics.",
+      "slug": "best-research-paper"
+    },
+    {
+      "title": "JN Tata Endowment Scholarship",
+      "year": 2024,
+      "content": "Received for excellence in academic research and potential for doctoral study. This prestigious scholarship recognizes outstanding academic achievement and research potential in engineering and technology fields.",
+      "slug": "jn-tata-scholarship"
+    },
+    {
+      "title": "Program Gold Medal - IIIT Hyderabad",
+      "year": 2023,
+      "content": "Awarded for achieving the highest GPA in the Electronics and Communication Engineering program. This recognition highlights academic excellence and outstanding performance throughout the undergraduate program.",
+      "slug": "program-gold-medal"
+    }
+  ],
   "hero": {
     "name": "Gopalakrishnan Thirunellai Venkitachalam",
     "title": "Master's of Science, AI & Robotics Research",

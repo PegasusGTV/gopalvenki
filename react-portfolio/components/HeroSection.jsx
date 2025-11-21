@@ -43,9 +43,14 @@ const HeroSection = () => {
           >
             {heroData?.profile_image ? (
               <img
-                src={`/${heroData.profile_image}`}
+                src={`/gopalvenki/${heroData.profile_image}`}
                 alt={heroData?.name || 'Profile'}
                 className="w-full h-full object-cover"
+                onError={(e) => {
+                  // Fallback to initials if image fails to load
+                  e.target.style.display = 'none';
+                  e.target.parentElement.innerHTML = `<div class="w-full h-full bg-gradient-to-br from-accent to-accent/50 flex items-center justify-center text-4xl font-bold text-navy">${heroData?.profile_initials || 'GV'}</div>`;
+                }}
               />
             ) : (
               <div className="w-full h-full bg-gradient-to-br from-accent to-accent/50 flex items-center justify-center text-4xl font-bold text-navy">

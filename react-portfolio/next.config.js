@@ -4,6 +4,7 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: ['drive.google.com'],
+    unoptimized: true,
   },
   // GitHub Pages configuration
   trailingSlash: true,

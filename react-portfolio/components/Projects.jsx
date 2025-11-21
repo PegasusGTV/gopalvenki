@@ -66,9 +66,37 @@ const Projects = () => {
                     </h3>
                     
                     {project.content && (
-                      <p className="text-lightSlate group-hover:text-lightestSlate transition-colors duration-200 flex-1 text-sm leading-relaxed">
-                        {project.content}
-                      </p>
+                      <div className="text-lightSlate group-hover:text-lightestSlate transition-colors duration-200 flex-1 text-sm leading-relaxed space-y-2 overflow-y-auto max-h-96">
+                        {project.content.split('\n\n').map((para, idx) => {
+                          if (!para.trim()) return null;
+                          
+                          // Check if paragraph starts with bold text (like "**Motivation:**")
+                          const boldMatch = para.match(/^\*\*(.*?):\*\*/);
+                          if (boldMatch) {
+                            const boldText = boldMatch[1];
+                            const restText = para.replace(/^\*\*.*?:\*\*\s*/, '');
+                            return (
+                              <div key={idx} className="mb-2">
+                                <strong className="text-white font-semibold">{boldText}:</strong>{' '}
+                                <span>{restText}</span>
+                              </div>
+                            );
+                          }
+                          
+                          // Regular paragraph
+                          const parts = para.split(/(\*\*.*?\*\*)/g);
+                          return (
+                            <p key={idx} className="mb-2">
+                              {parts.map((part, partIdx) => {
+                                if (part.match(/\*\*(.*?)\*\*/)) {
+                                  return <strong key={partIdx} className="text-white font-semibold">{part.replace(/\*\*/g, '')}</strong>;
+                                }
+                                return <span key={partIdx}>{part}</span>;
+                              })}
+                            </p>
+                          );
+                        })}
+                      </div>
                     )}
 
                     {project.link && (

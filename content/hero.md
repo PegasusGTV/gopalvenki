@@ -10,7 +10,7 @@ phone: "+1 (412) 909-7233"
 github: "https://github.com/PegasusGTV"
 linkedin: "https://www.linkedin.com/in/gopal-venki/"
 scholar: ""
-resume: ""
+resume: "resume.pdf"
 ---
 
 ## Social Links

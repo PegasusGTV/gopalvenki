@@ -20,7 +20,7 @@ primary_cta_link: "mailto:gopalakt@andrew.cmu.edu"
 ### LinkedIn
 - **Type**: LinkedIn
 - **Value**: Connect
-- **Link**: https://www.linkedin.com/in/gopalakrishnan-thirunellai-venkitachalam
+- **Link**: https://www.linkedin.com/in/gopal-venki/
 
 ### GitHub
 - **Type**: GitHub

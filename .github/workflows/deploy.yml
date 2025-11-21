@@ -44,11 +44,20 @@ jobs:
       - name: Copy public assets to basePath
         working-directory: ./react-portfolio
         run: |
+          # Ensure the basePath directory exists
+          mkdir -p out/gopalvenki
           # Copy public folder contents to the basePath directory
-          cp -r public/* out/gopalvenki/ 2>/dev/null || true
-          # Ensure profile image exists
+          if [ -d "public" ]; then
+            cp -r public/* out/gopalvenki/ 2>/dev/null || true
+          fi
+          # Ensure profile image exists and verify
           if [ -f "public/profile.jpeg" ]; then
             cp public/profile.jpeg out/gopalvenki/profile.jpeg
+            echo "Profile image copied successfully"
+            ls -lh out/gopalvenki/profile.jpeg
+          else
+            echo "WARNING: profile.jpeg not found in public folder"
+            ls -la public/ || echo "Public folder not found"
           fi
 
       - name: Setup Pages

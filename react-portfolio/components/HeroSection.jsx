@@ -46,12 +46,13 @@ const HeroSection = () => {
           >
             {heroData?.profile_image ? (
               <img
-                src={`${basePath}/${heroData.profile_image}`}
+                src={`${basePath === '/' ? '' : basePath}/${heroData.profile_image}`}
                 alt={heroData?.name || 'Profile'}
                 className="w-full h-full object-cover"
+                loading="eager"
                 onError={(e) => {
                   // Fallback to initials if image fails to load
-                  console.error('Image failed to load:', e.target.src);
+                  console.error('Image failed to load:', e.target.src, 'Trying fallback...');
                   e.target.style.display = 'none';
                   const parent = e.target.parentElement;
                   if (parent) {

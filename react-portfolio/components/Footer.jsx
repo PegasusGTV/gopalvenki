@@ -53,7 +53,7 @@ const Footer = () => {
               <motion.a
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                href="https://www.linkedin.com/in/gopalakrishnan-thirunellai-venkitachalam"
+                href="https://www.linkedin.com/in/gopal-venki/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-lightSlate hover:text-accent transition-colors duration-200"

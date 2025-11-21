@@ -13,7 +13,7 @@ copyright_text: "© 2024 Gopalakrishnan Thirunellai Venkitachalam. All rights re
 - **Aria Label**: GitHub
 
 ### LinkedIn
-- **Link**: https://www.linkedin.com/in/gopalakrishnan-thirunellai-venkitachalam
+- **Link**: https://www.linkedin.com/in/gopal-venki/
 - **Aria Label**: LinkedIn
 
 ## Footer Features

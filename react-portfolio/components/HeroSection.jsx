@@ -42,7 +42,7 @@ const HeroSection = () => {
             initial={{ scale: 0 }}
             animate={{ scale: isVisible ? 1 : 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-accent shadow-lg"
+            className="w-48 h-48 md:w-56 md:h-56 mx-auto rounded-full overflow-hidden border-4 border-accent shadow-2xl"
           >
             {heroData?.profile_image ? (
               <img

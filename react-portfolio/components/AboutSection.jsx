@@ -24,20 +24,21 @@ const AboutSection = () => {
             ) : (
               <>
                 <p>
-                  I am a Graduate Research Assistant at the Robotics Institute, Carnegie Mellon University, 
-                  advised by Prof. Katia Sycara.
+                  Hello! I'm Gopalakrishnan Thirunellai Venkitachalam (Gopal), a Master's student in AI & Robotics Research, 
+                  Mechanical Engineering at Carnegie Mellon University. I'm currently working as a Graduate Research Assistant 
+                  at the Search Based Planning Lab, Robotics Institute, under the guidance of Prof. Maxim Likhachev.
                 </p>
                 <p>
-                  My research explores multi-agent reinforcement learning (MARL) in cooperative and competitive 
-                  environments, emphasizing belief modeling, opponent adaptation, and decision-making under uncertainty.
+                  My research focuses on developing efficient motion planning algorithms for robotics applications, with 
+                  particular emphasis on real-time planning for mobile manipulators and multi-agent systems.
                 </p>
                 <p>
-                  Previously, I was a Pre-doctoral Research Fellow at TCS Research, India, working on task planning 
-                  for indoor object rearrangement under partial observability.
+                  Previously, I was a Research Intern in ML, Control, and Data Analytics at Caterpillar Inc., where I 
+                  developed MATLAB and Simulink models for predicting diesel engine exhaust gas temperature dynamics.
                 </p>
                 <p>
-                  I hold a B.Tech (Honors) in Electronics and Communication Engineering from IIIT Hyderabad, 
-                  where I received the Program Gold Medal for highest GPA.
+                  I hold a B.Tech in Mechanical Engineering with Honors from IIT Madras, with a Minor in Artificial Intelligence 
+                  and Machine Learning, achieving a GPA of 8.71/10.0.
                 </p>
               </>
             )}
@@ -51,16 +52,16 @@ const AboutSection = () => {
             className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16"
           >
             <div className="text-center">
-              <div className="text-3xl font-bold text-accent mb-2">3+</div>
+              <div className="text-3xl font-bold text-accent mb-2">4.0</div>
+              <div className="text-lightSlate">GPA at CMU</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-accent mb-2">2+</div>
               <div className="text-lightSlate">Years Research Experience</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-accent mb-2">5+</div>
-              <div className="text-lightSlate">Publications</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-accent mb-2">10+</div>
-              <div className="text-lightSlate">Projects</div>
+              <div className="text-3xl font-bold text-accent mb-2">1+</div>
+              <div className="text-lightSlate">Year Industry Experience</div>
             </div>
           </motion.div>
         </motion.div>

@@ -6,36 +6,68 @@ const Interests = () => {
   const [ref, isInView] = useInView({ once: true, margin: "-100px" });
   const interestsData = getSectionContent('interests');
 
-  const interests = [
+  // Parse interests from markdown content
+  const parseInterests = (content) => {
+    if (!content) return [];
+    
+    const interests = [];
+    const sections = content.split(/### /).filter(section => section.trim());
+    
+    sections.forEach(section => {
+      const lines = section.split('\n').filter(line => line.trim());
+      if (lines.length === 0) return;
+      
+      const title = lines[0].trim();
+      let description = '';
+      let icon = '🔬';
+      
+      lines.forEach(line => {
+        if (line.includes('**Description**:')) {
+          description = line.replace(/\*\*Description\*\*:\s*/, '').trim();
+        }
+        if (line.includes('**Icon**:')) {
+          icon = line.replace(/\*\*Icon\*\*:\s*/, '').trim();
+        }
+      });
+      
+      if (title && description) {
+        interests.push({ title, description, icon });
+      }
+    });
+    
+    return interests;
+  };
+
+  const interests = parseInterests(interestsData?.content) || [
     {
-      title: "Reinforcement Learning",
-      description: "Develop algorithms that enable agents to learn close-to-optimal planning and control strategies in robotics, leveraging human demonstrations, fixed datasets, or interactions with dynamic environments.",
-      icon: "🤖"
+      title: "Motion Planning",
+      description: "Developing efficient algorithms for real-time motion planning in robotics, including constant-time planning for mobile manipulators and pathfinding in complex environments.",
+      icon: "🗺️"
     },
     {
-      title: "Sequence Modelling",
-      description: "Design models that predict and understand sequential data, including temporal patterns, trajectories, and planning sequences.",
-      icon: "📈"
-    },
-    {
-      title: "Decision Making under Uncertainty",
-      description: "Develop methods for robust and adaptive decision-making in partially observable or stochastic environments.",
-      icon: "🎯"
-    },
-    {
-      title: "Multi-Agent Reinforcement Learning (MARL)",
-      description: "Study interactions of multiple agents learning together, including cooperation, competition, and strategic reasoning.",
+      title: "Multi-Agent Systems",
+      description: "Researching formation control, multi-agent pathfinding (MAPF), and coordination algorithms for collaborative robotic systems.",
       icon: "👥"
     },
     {
-      title: "Safe and Robust Control",
-      description: "Design control strategies for autonomous systems that ensure safety, reliability, and robustness under uncertainty.",
-      icon: "🛡️"
+      title: "Machine Learning & Deep Learning",
+      description: "Applying machine learning techniques including reinforcement learning, deep learning, and neural networks to solve robotics and prediction problems.",
+      icon: "🤖"
     },
     {
-      title: "Planning",
-      description: "Develop algorithms for efficient and adaptive planning in robotics and AI systems, including long-horizon decision-making.",
-      icon: "🗺️"
+      title: "Computer Vision",
+      description: "Developing computer vision solutions for robotics applications, including object detection, semantic segmentation, and visual recognition systems.",
+      icon: "👁️"
+    },
+    {
+      title: "Control Systems",
+      description: "Designing and implementing control systems for robotic applications, including predictive control and real-time system optimization.",
+      icon: "🎛️"
+    },
+    {
+      title: "Data Analytics",
+      description: "Analyzing large-scale datasets using statistical methods, clustering, and visualization techniques for engineering applications.",
+      icon: "📊"
     }
   ];
 
@@ -51,7 +83,7 @@ const Interests = () => {
           <h2 className="section-title">{interestsData?.title || 'Research Interests'}</h2>
           <div className="w-24 h-1 bg-accent mx-auto mb-8"></div>
           <p className="text-lg text-lightSlate max-w-3xl mx-auto">
-            {interestsData?.description || "My research focuses on advancing artificial intelligence through multi-agent systems, with particular emphasis on learning, adaptation, and strategic decision-making."}
+            {interestsData?.description || "My research focuses on motion planning, multi-agent systems, machine learning, and robotics, with emphasis on real-time algorithms for practical applications."}
           </p>
         </motion.div>
 

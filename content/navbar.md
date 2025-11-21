@@ -6,9 +6,7 @@ title: "Navigation"
 
 - **About**: #about
 - **Research**: #research
-- **Publications**: #publications
 - **Projects**: #projects
-- **Awards**: #awards
 - **Contact**: #contact
 
 ## Mobile Menu

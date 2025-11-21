@@ -16,28 +16,30 @@ const Footer = () => {
         >
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <div className="text-lightSlate">
-              {footerData?.copyright_text || `© ${currentYear} Karan Mirakhor. All rights reserved.`}
+              {footerData?.copyright_text || `© ${currentYear} Gopalakrishnan Thirunellai Venkitachalam. All rights reserved.`}
             </div>
             
             <div className="flex items-center space-x-6">
-              <motion.a
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                href="https://scholar.google.com/citations?user=wpeFm64AAAAJ&hl=en"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-lightSlate hover:text-accent transition-colors duration-200"
-                aria-label="Google Scholar"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/>
-                </svg>
-              </motion.a>
+              {footerData?.scholar && (
+                <motion.a
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  href={footerData.scholar}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lightSlate hover:text-accent transition-colors duration-200"
+                  aria-label="Google Scholar"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/>
+                  </svg>
+                </motion.a>
+              )}
 
               <motion.a
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                href="https://github.com/karan-13-hub"
+                href="https://github.com/PegasusGTV"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-lightSlate hover:text-accent transition-colors duration-200"
@@ -51,7 +53,7 @@ const Footer = () => {
               <motion.a
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                href="https://www.linkedin.com/in/karan-mirakhor-b065b7142/"
+                href="https://www.linkedin.com/in/gopalakrishnan-thirunellai-venkitachalam"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-lightSlate hover:text-accent transition-colors duration-200"

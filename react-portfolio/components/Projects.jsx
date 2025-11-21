@@ -18,7 +18,7 @@ const Projects = () => {
           <h2 className="section-title">Projects</h2>
           <div className="w-24 h-1 bg-accent mx-auto mb-8"></div>
           <p className="text-lg text-lightSlate max-w-3xl mx-auto">
-            Selected projects showcasing my work in AI, robotics, and multi-agent systems.
+            Selected projects showcasing my work in motion planning, robotics, machine learning, and data analytics.
           </p>
         </motion.div>
 

@@ -9,11 +9,11 @@ copyright_text: "© 2024 Gopalakrishnan Thirunellai Venkitachalam. All rights re
 - **Aria Label**: Email
 
 ### GitHub
-- **Link**: https://github.com/your-username
+- **Link**: https://github.com/PegasusGTV
 - **Aria Label**: GitHub
 
 ### LinkedIn
-- **Link**: https://www.linkedin.com/in/your-profile/
+- **Link**: https://www.linkedin.com/in/gopalakrishnan-thirunellai-venkitachalam
 - **Aria Label**: LinkedIn
 
 ## Footer Features

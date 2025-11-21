@@ -6,9 +6,7 @@ const nextConfig = {
     domains: ['drive.google.com'],
   },
   // GitHub Pages configuration
-  output: 'export',
   trailingSlash: true,
-  distDir: 'out',
   basePath: '/gopalvenki',
   assetPrefix: '/gopalvenki',
 }

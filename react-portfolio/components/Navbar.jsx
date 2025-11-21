@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { getSectionContent } from '../lib/markdown';
+import { getSectionContent, getAllContent } from '../lib/markdown';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navbarData = getSectionContent('navbar');
+  const publications = getAllContent('publications');
+  const awards = getAllContent('awards');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,9 +21,9 @@ const Navbar = () => {
   const navItems = [
     { name: 'About', href: '#about' },
     { name: 'Research', href: '#research' },
-    { name: 'Publications', href: '#publications' },
+    ...(publications.length > 0 ? [{ name: 'Publications', href: '#publications' }] : []),
     { name: 'Projects', href: '#projects' },
-    { name: 'Awards', href: '#awards' },
+    ...(awards.length > 0 ? [{ name: 'Awards', href: '#awards' }] : []),
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -48,7 +50,7 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             className="flex-shrink-0"
           >
-            <span className="text-xl font-bold text-accent">KM</span>
+            <span className="text-xl font-bold text-accent">GV</span>
           </motion.div>
 
           {/* Desktop Navigation */}

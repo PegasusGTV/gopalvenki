@@ -5,14 +5,20 @@ institution: "Robotics Institute, Carnegie Mellon University"
 tagline: "Advancing motion planning and multi-agent systems through algorithmic innovation"
 profile_initials: "GV"
 profile_image: "profile.jpeg"
+email: "gopalakt@andrew.cmu.edu"
+phone: "+1 (412) 909-7233"
+github: "https://github.com/PegasusGTV"
+linkedin: "https://www.linkedin.com/in/gopalakrishnan-thirunellai-venkitachalam"
+scholar: ""
+resume: ""
 ---
 
 ## Social Links
 
 - **Email**: [gopalakt@andrew.cmu.edu](mailto:gopalakt@andrew.cmu.edu)
 - **Phone**: [+1 (412) 909-7233](tel:+14129097233)
-- **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/your-profile/)
-- **GitHub**: [Your GitHub Profile](https://github.com/your-username)
+- **LinkedIn**: [LinkedIn Profile](https://www.linkedin.com/in/gopalakrishnan-thirunellai-venkitachalam)
+- **GitHub**: [GitHub Profile](https://github.com/PegasusGTV)
 
 ## Background Elements
 

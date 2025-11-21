@@ -6,6 +6,11 @@ const Awards = () => {
   const [ref, isInView] = useInView({ once: true, margin: "-100px" });
   const awards = getAllContent('awards');
 
+  // Hide section if no awards
+  if (awards.length === 0) {
+    return null;
+  }
+
   return (
     <section id="awards" ref={ref} className="py-20 bg-lightNavy/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

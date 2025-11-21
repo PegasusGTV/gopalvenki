@@ -1,34 +1,6 @@
 // Auto-generated content data
 export const contentData = {
-  "publications": [
-    {
-      "title": "Belief",
-      "authors": "Karan Mirakhor, Katia Sycara",
-      "venue": "ICLR",
-      "year": 2026,
-      "link": "https://openreview.net/forum?id=jJvXNpvOdM",
-      "content": "We propose a novel approach to zero-shot coordination in multi-agent systems by leveraging belief modeling and opponent adaptation. Our method enables agents to coordinate effectively with unseen partners by maintaining beliefs about their strategies and adapting accordingly. The approach demonstrates significant improvements in cooperative environments with partial observability.",
-      "slug": "belief-guided-zero-shot"
-    },
-    {
-      "title": "Strategic Deception in Multi-Agent Reinforcement Learning",
-      "authors": "Karan Mirakhor, Katia Sycara, Prashant Doshi",
-      "venue": "AAMAS",
-      "year": 2025,
-      "link": "https://example.com/paper2",
-      "content": "This work explores the role of strategic deception in multi-agent reinforcement learning environments. We develop a framework for agents to learn when and how to deceive opponents while maintaining cooperation when beneficial. The approach shows improved performance in competitive scenarios with partial information.",
-      "slug": "multi-agent-deception"
-    },
-    {
-      "title": "Hierarchical Task Planning for Robotic Object Rearrangement under Partial Observability",
-      "authors": "Karan Mirakhor, TCS Research Team",
-      "venue": "ICRA",
-      "year": 2024,
-      "link": "https://example.com/paper3",
-      "content": "We present a hierarchical approach to task planning for robotic object rearrangement in partially observable environments. The method combines high-level symbolic planning with low-level motion planning, enabling robots to handle uncertainty and adapt to changing environments. Experimental results show improved success rates in cluttered indoor scenarios.",
-      "slug": "robotic-task-planning"
-    }
-  ],
+  "publications": [],
   "projects": [
     {
       "title": "Financial Market Prediction",
@@ -55,26 +27,7 @@ export const contentData = {
       "slug": "rl-algorithms-analysis"
     }
   ],
-  "awards": [
-    {
-      "title": "Best Research Paper Award - TCS Research",
-      "year": 2024,
-      "content": "Recognized for outstanding contribution to robotic task planning research. The paper presented novel approaches to hierarchical planning under partial observability, with significant practical applications in service robotics.",
-      "slug": "best-research-paper"
-    },
-    {
-      "title": "JN Tata Endowment Scholarship",
-      "year": 2024,
-      "content": "Received for excellence in academic research and potential for doctoral study. This prestigious scholarship recognizes outstanding academic achievement and research potential in engineering and technology fields.",
-      "slug": "jn-tata-scholarship"
-    },
-    {
-      "title": "Program Gold Medal - IIIT Hyderabad",
-      "year": 2023,
-      "content": "Awarded for achieving the highest GPA in the Electronics and Communication Engineering program. This recognition highlights academic excellence and outstanding performance throughout the undergraduate program.",
-      "slug": "program-gold-medal"
-    }
-  ],
+  "awards": [],
   "hero": {
     "name": "Gopalakrishnan Thirunellai Venkitachalam",
     "title": "Master's of Science, AI & Robotics Research",
@@ -82,7 +35,13 @@ export const contentData = {
     "tagline": "Advancing motion planning and multi-agent systems through algorithmic innovation",
     "profile_initials": "GV",
     "profile_image": "profile.jpeg",
-    "content": "## Social Links\n\n- **Email**: [gopalakt@andrew.cmu.edu](mailto:gopalakt@andrew.cmu.edu)\n- **Phone**: [+1 (412) 909-7233](tel:+14129097233)\n- **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/your-profile/)\n- **GitHub**: [Your GitHub Profile](https://github.com/your-username)\n\n## Background Elements\n\n- Background pattern with gradient circles\n- Scroll down indicator with animated arrow\n- Profile image placeholder with initials"
+    "email": "gopalakt@andrew.cmu.edu",
+    "phone": "+1 (412) 909-7233",
+    "github": "https://github.com/PegasusGTV",
+    "linkedin": "https://www.linkedin.com/in/gopalakrishnan-thirunellai-venkitachalam",
+    "scholar": "",
+    "resume": "",
+    "content": "## Social Links\n\n- **Email**: [gopalakt@andrew.cmu.edu](mailto:gopalakt@andrew.cmu.edu)\n- **Phone**: [+1 (412) 909-7233](tel:+14129097233)\n- **LinkedIn**: [LinkedIn Profile](https://www.linkedin.com/in/gopalakrishnan-thirunellai-venkitachalam)\n- **GitHub**: [GitHub Profile](https://github.com/PegasusGTV)\n\n## Background Elements\n\n- Background pattern with gradient circles\n- Scroll down indicator with animated arrow\n- Profile image placeholder with initials"
   },
   "about": {
     "title": "About Me",
@@ -98,20 +57,25 @@ export const contentData = {
     "description": "I'm always interested in discussing new research opportunities, collaborations, and innovative projects in AI, robotics, and motion planning.",
     "primary_cta": "Send me an email",
     "primary_cta_link": "mailto:gopalakt@andrew.cmu.edu",
-    "content": "## Contact Information\n\n### Email\n- **Type**: Email\n- **Value**: gopalakt@andrew.cmu.edu\n- **Link**: mailto:gopalakt@andrew.cmu.edu\n\n### Phone\n- **Type**: Phone\n- **Value**: +1 (412) 909-7233\n- **Link**: tel:+14129097233\n\n### LinkedIn\n- **Type**: LinkedIn\n- **Value**: Connect\n- **Link**: https://www.linkedin.com/in/your-profile/\n\n### GitHub\n- **Type**: GitHub\n- **Value**: View Profile\n- **Link**: https://github.com/your-username"
+    "content": "## Contact Information\n\n### Email\n- **Type**: Email\n- **Value**: gopalakt@andrew.cmu.edu\n- **Link**: mailto:gopalakt@andrew.cmu.edu\n\n### Phone\n- **Type**: Phone\n- **Value**: +1 (412) 909-7233\n- **Link**: tel:+14129097233\n\n### LinkedIn\n- **Type**: LinkedIn\n- **Value**: Connect\n- **Link**: https://www.linkedin.com/in/gopalakrishnan-thirunellai-venkitachalam\n\n### GitHub\n- **Type**: GitHub\n- **Value**: View Profile\n- **Link**: https://github.com/PegasusGTV"
   },
   "interests": {
     "title": "Research Interests",
-    "description": "My research focuses on motion planning, multi-agent systems, machine learning, and robotics, with emphasis on real-time algorithms for practical applications.",
-    "content": "## Interest Areas\n\n### Motion Planning\n- **Description**: Developing efficient algorithms for real-time motion planning in robotics, including constant-time planning for mobile manipulators and pathfinding in complex environments.\n- **Icon**: 🗺️\n\n### Multi-Agent Systems\n- **Description**: Researching formation control, multi-agent pathfinding (MAPF), and coordination algorithms for collaborative robotic systems.\n- **Icon**: 👥\n\n### Machine Learning & Deep Learning\n- **Description**: Applying machine learning techniques including reinforcement learning, deep learning, and neural networks to solve robotics and prediction problems.\n- **Icon**: 🤖\n\n### Computer Vision\n- **Description**: Developing computer vision solutions for robotics applications, including object detection, semantic segmentation, and visual recognition systems.\n- **Icon**: 👁️\n\n### Control Systems\n- **Description**: Designing and implementing control systems for robotic applications, including predictive control and real-time system optimization.\n- **Icon**: 🎛️\n\n### Data Analytics\n- **Description**: Analyzing large-scale datasets using statistical methods, clustering, and visualization techniques for engineering applications.\n- **Icon**: 📊"
+    "description": "My research focuses on motion planning, multi-agent systems, machine learning, and robotics, with emphasis on real-time algorithms for practical applications including warehouse automation and hazardous environment operations.",
+    "content": "## Interest Areas\n\n### Motion Planning\n- **Description**: Developing efficient algorithms for real-time motion planning in robotics, including constant-time planning (CTMP) for mobile manipulators, pathfinding in complex environments, and dynamic task allocation for warehouse robotics applications.\n- **Icon**: 🗺️\n\n### Multi-Agent Systems\n- **Description**: Researching formation control, multi-agent pathfinding (MAPF), and coordination algorithms for collaborative robotic systems. Working on GIF-PIBT algorithms that integrate global formation heuristics with priority-based pathfinding frameworks.\n- **Icon**: 👥\n\n### Machine Learning & Deep Learning\n- **Description**: Applying machine learning techniques including reinforcement learning, deep learning, and neural networks to solve robotics and prediction problems. Experience with PyTorch, TensorFlow, and various RL algorithms for robotic applications.\n- **Icon**: 🤖\n\n### Computer Vision\n- **Description**: Developing computer vision solutions for robotics applications, including object detection, semantic segmentation, and visual recognition systems. Experience with OpenCV and deep learning-based vision models.\n- **Icon**: 👁️\n\n### Control Systems\n- **Description**: Designing and implementing control systems for robotic applications, including predictive control, real-time system optimization, and control of automotive systems. Experience with MATLAB, Simulink, and modern control theory.\n- **Icon**: 🎛️\n\n### Data Analytics\n- **Description**: Analyzing large-scale datasets using statistical methods, PCA, K-means clustering, and visualization techniques for engineering applications. Experience with Python, Pandas, NumPy, and data visualization tools.\n- **Icon**: 📊"
+  },
+  "research": {
+    "title": "Current Research",
+    "description": "My research focuses on developing efficient motion planning algorithms for robotics applications, with particular emphasis on real-time planning for mobile manipulators and multi-agent systems.",
+    "content": "## Current Research\n\n🔬 **Constant Time Motion Planning (CTMP) for Mobile Manipulators**  \nDeveloping algorithms for optimizing dynamic task allocation and motion planning in warehouse robotics. Implementing solutions in C++ & ROS to enhance real-time adaptability and execution efficiency. Working on simulated door-opening tasks with Ridgeback UR10e teleoperation in SAPien and Maniskill, demonstrating precision for hazardous applications like nuclear waste disposal.\n\n## Research Focus Areas\n\n### Motion Planning\n- Real-time motion planning for mobile manipulators\n- Constant-time planning algorithms\n- Pathfinding in complex, dynamic environments\n- Warehouse robotics automation\n\n### Multi-Agent Systems\n- Formation control algorithms\n- Multi-agent pathfinding (MAPF)\n- Coordination strategies for collaborative systems\n- Dynamic task allocation\n\n### Machine Learning Applications\n- Reinforcement learning for robotics\n- Deep learning for motion prediction\n- Neural network-based planning strategies\n\n## Research Environment\n\n- **Laboratory**: Search Based Planning Lab, Robotics Institute, CMU\n- **Advisor**: Prof. Maxim Likhachev\n- **Tools & Technologies**: C++, ROS, SAPien, Maniskill, Python, PyTorch\n- **Applications**: Warehouse automation, hazardous environment operations, nuclear waste disposal"
   },
   "navbar": {
     "title": "Navigation",
-    "content": "## Navigation Items\n\n- **About**: #about\n- **Research**: #research\n- **Publications**: #publications\n- **Projects**: #projects\n- **Awards**: #awards\n- **Contact**: #contact\n\n## Mobile Menu\n- Responsive mobile menu with hamburger icon\n- Smooth scroll to sections\n- Auto-close on navigation"
+    "content": "## Navigation Items\n\n- **About**: #about\n- **Research**: #research\n- **Projects**: #projects\n- **Contact**: #contact\n\n## Mobile Menu\n- Responsive mobile menu with hamburger icon\n- Smooth scroll to sections\n- Auto-close on navigation"
   },
   "footer": {
     "copyright_text": "© 2024 Gopalakrishnan Thirunellai Venkitachalam. All rights reserved.",
-    "content": "## Social Links\n\n### Email\n- **Link**: mailto:gopalakt@andrew.cmu.edu\n- **Aria Label**: Email\n\n### GitHub\n- **Link**: https://github.com/your-username\n- **Aria Label**: GitHub\n\n### LinkedIn\n- **Link**: https://www.linkedin.com/in/your-profile/\n- **Aria Label**: LinkedIn\n\n## Footer Features\n- Dynamic year calculation\n- Hover animations\n- Responsive layout"
+    "content": "## Social Links\n\n### Email\n- **Link**: mailto:gopalakt@andrew.cmu.edu\n- **Aria Label**: Email\n\n### GitHub\n- **Link**: https://github.com/PegasusGTV\n- **Aria Label**: GitHub\n\n### LinkedIn\n- **Link**: https://www.linkedin.com/in/gopalakrishnan-thirunellai-venkitachalam\n- **Aria Label**: LinkedIn\n\n## Footer Features\n- Dynamic year calculation\n- Hover animations\n- Responsive layout"
   }
 };
 

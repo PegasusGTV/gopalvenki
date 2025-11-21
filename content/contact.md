@@ -20,9 +20,9 @@ primary_cta_link: "mailto:gopalakt@andrew.cmu.edu"
 ### LinkedIn
 - **Type**: LinkedIn
 - **Value**: Connect
-- **Link**: https://www.linkedin.com/in/your-profile/
+- **Link**: https://www.linkedin.com/in/gopalakrishnan-thirunellai-venkitachalam
 
 ### GitHub
 - **Type**: GitHub
 - **Value**: View Profile
-- **Link**: https://github.com/your-username
+- **Link**: https://github.com/PegasusGTV

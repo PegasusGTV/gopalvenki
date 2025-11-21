@@ -1,10 +1,13 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import { getSectionContent } from '../lib/markdown';
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [heroData, setHeroData] = useState(null);
+  const router = useRouter();
+  const basePath = router.basePath || '/gopalvenki';
 
   useEffect(() => {
     setIsVisible(true);
@@ -43,7 +46,7 @@ const HeroSection = () => {
           >
             {heroData?.profile_image ? (
               <img
-                src="/gopalvenki/profile.jpeg"
+                src={`${basePath}/${heroData.profile_image}`}
                 alt={heroData?.name || 'Profile'}
                 className="w-full h-full object-cover"
                 onError={(e) => {

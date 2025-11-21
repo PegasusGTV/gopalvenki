@@ -41,6 +41,16 @@ jobs:
         working-directory: ./react-portfolio
         run: npm run build
 
+      - name: Copy public assets to basePath
+        working-directory: ./react-portfolio
+        run: |
+          # Copy public folder contents to the basePath directory
+          cp -r public/* out/gopalvenki/ 2>/dev/null || true
+          # Ensure profile image exists
+          if [ -f "public/profile.jpeg" ]; then
+            cp public/profile.jpeg out/gopalvenki/profile.jpeg
+          fi
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 

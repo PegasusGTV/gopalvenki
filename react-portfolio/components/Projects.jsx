@@ -1,10 +1,13 @@
 import { motion } from 'framer-motion';
 import { useInView } from '../hooks/useInView';
 import { getAllContent } from '../lib/markdown';
+import { useRouter } from 'next/router';
 
 const Projects = () => {
   const [ref, isInView] = useInView({ once: true, margin: "-100px" });
   const projects = getAllContent('projects');
+  const router = useRouter();
+  const basePath = router.basePath || '';
 
   return (
     <section id="projects" ref={ref} className="py-20">
@@ -40,34 +43,50 @@ const Projects = () => {
                   y: -5,
                   transition: { duration: 0.2 }
                 }}
-                className="card group cursor-pointer"
+                className="card group cursor-pointer overflow-hidden"
               >
                 <div className="h-full flex flex-col">
-                  <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-accent transition-colors duration-200">
-                    {project.title}
-                  </h3>
+                  {/* Project Image */}
+                  {project.image && (
+                    <div className="relative w-full h-48 mb-4 overflow-hidden rounded-t-lg bg-lightNavy/50">
+                      <img
+                        src={`${basePath === '/' ? '' : basePath}/${project.image}`}
+                        alt={project.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                        }}
+                      />
+                    </div>
+                  )}
                   
-                  {project.content && (
-                    <p className="text-lightSlate group-hover:text-lightestSlate transition-colors duration-200 flex-1">
-                      {project.content}
-                    </p>
-                  )}
+                  <div className="flex-1 flex flex-col p-6">
+                    <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-accent transition-colors duration-200">
+                      {project.title}
+                    </h3>
+                    
+                    {project.content && (
+                      <p className="text-lightSlate group-hover:text-lightestSlate transition-colors duration-200 flex-1 text-sm leading-relaxed">
+                        {project.content}
+                      </p>
+                    )}
 
-                  {project.link && (
-                    <motion.a
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-accent hover:text-white mt-4 transition-colors duration-200"
-                    >
-                      <span className="mr-2">View Project</span>
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                    </motion.a>
-                  )}
+                    {project.link && (
+                      <motion.a
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-accent hover:text-white mt-4 transition-colors duration-200"
+                      >
+                        <span className="mr-2">View Project</span>
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </motion.a>
+                    )}
+                  </div>
                 </div>
               </motion.div>
             ))

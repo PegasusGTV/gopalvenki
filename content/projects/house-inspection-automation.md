@@ -1,9 +1,10 @@
 ---
-title: "House Inspection Automation"
-link: "https://example.com/house-inspection-automation"
+title: "Automated Property Inspection with Computer Vision"
+link: ""
+image: "projects/property-inspection.jpg"
 ---
 
-Developed a comprehensive image-processing pipeline leveraging classical and deep learning methods to detect structural damages such as rust, cracks, and wear in property images, enabling automated and reliable inspection reports. Engineered a modular system integrating semantic segmentation and contour-based algorithms for damage localization and classification, ensuring adaptability across diverse lighting and material conditions.
+Built an application to automate home inspection reporting using classical and deep learning–based computer vision methods, reducing manual errors and inspection time. Developed modules for rust, wear, foundation, water damage, and roof damage detection, leveraging OpenCV, thermal imaging, and Gabor filtering for robust results.
 
 
 

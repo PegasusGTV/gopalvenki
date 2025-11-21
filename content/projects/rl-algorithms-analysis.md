@@ -1,9 +1,10 @@
 ---
-title: "Qualitative Analysis of RL Algorithms in Various Gym Environments"
-link: "https://example.com/rl-algorithms-analysis"
+title: "Reinforcement Learning Algorithms: From TD Learning to Hierarchical Methods"
+link: ""
+image: "projects/rl-algorithms.jpg"
 ---
 
-Applied SARSA, Q-learning, and Dueling DQN across diverse environments, including Acrobot, Cartpole, and Taxi-v3. Leveraged advanced techniques like Monte-Carlo REINFORCE, SMDP-Q, and Dyna-Q in various gym environments. This project provided comprehensive analysis and comparison of different reinforcement learning algorithms across multiple benchmark environments.
+Implemented and compared SARSA and Q-Learning in Grid World environments, analyzing exploration strategies (ε-greedy vs. Softmax) and showing key differences in safe vs. optimal policies. Extended to deep reinforcement learning with Dueling-DQN and Monte-Carlo REINFORCE, demonstrating how architectural variations and baselines affect learning stability and performance. Explored hierarchical RL through SMDP Q-Learning and Intra-Option Q-Learning in the Taxi-v3 environment, highlighting how options accelerate convergence and improve policy efficiency.
 
 
 

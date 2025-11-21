@@ -60,35 +60,48 @@ jobs:
             if [ -f "out/gopalvenki/index.html" ]; then
               echo "✓ index.html found in basePath"
             else
-              echo "✗ index.html NOT found in basePath"
+              echo "⚠ index.html NOT found in basePath - will check root"
             fi
           else
             echo "basePath directory not found - files are in out/ root"
             if [ -f "out/index.html" ]; then
               echo "✓ index.html found in out/ root"
             else
-              echo "✗ index.html NOT found in out/ root"
+              echo "⚠ index.html NOT found in out/ root"
             fi
           fi
 
       - name: Prepare deployment files
         working-directory: ./react-portfolio
         run: |
+          set -e  # Exit on error
+          echo "=== Preparing deployment files ==="
+          
           # Create deployment directory
+          rm -rf deploy
           mkdir -p deploy
           
           # Determine where Next.js exported the files
           if [ -d "out/gopalvenki" ] && [ -f "out/gopalvenki/index.html" ]; then
-            echo "Using basePath directory structure"
-            cp -r out/gopalvenki/* deploy/
-            DEPLOY_PATH="deploy"
+            echo "✓ Using basePath directory structure (out/gopalvenki)"
+            cp -r out/gopalvenki/* deploy/ 2>&1
+            echo "Files copied from out/gopalvenki/"
           elif [ -f "out/index.html" ]; then
-            echo "Using root directory structure - creating basePath structure"
-            mkdir -p deploy/gopalvenki
-            cp -r out/* deploy/gopalvenki/
-            DEPLOY_PATH="deploy/gopalvenki"
+            echo "✓ Using root directory structure (out/)"
+            cp -r out/* deploy/ 2>&1
+            echo "Files copied from out/"
           else
             echo "ERROR: Could not find index.html in expected locations"
+            echo "Searching for index.html..."
+            find out -name "index.html" -type f 2>/dev/null || echo "No index.html found anywhere"
+            exit 1
+          fi
+          
+          # Verify index.html exists in deploy
+          if [ ! -f "deploy/index.html" ]; then
+            echo "ERROR: index.html not found in deploy directory after copy"
+            echo "Contents of deploy/:"
+            ls -la deploy/
             exit 1
           fi
           
@@ -96,6 +109,8 @@ jobs:
           if [ -f "public/profile.jpeg" ]; then
             cp public/profile.jpeg deploy/profile.jpeg
             echo "✓ Profile image copied to deploy root"
+          else
+            echo "⚠ Profile image not found in public folder"
           fi
           
           # Copy all public assets
@@ -105,11 +120,12 @@ jobs:
           fi
           
           echo "=== Final deployment structure ==="
+          echo "Files in deploy/:"
           ls -la deploy/ | head -20
           if [ -f "deploy/index.html" ]; then
             echo "✓ index.html ready for deployment"
           else
-            echo "✗ index.html NOT found in deploy directory"
+            echo "ERROR: index.html NOT found in deploy directory"
             exit 1
           fi
 

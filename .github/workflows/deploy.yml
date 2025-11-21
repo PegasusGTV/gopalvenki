@@ -41,6 +41,24 @@ jobs:
         working-directory: ./react-portfolio
         run: npm run build
 
+      - name: Verify build output
+        working-directory: ./react-portfolio
+        run: |
+          echo "Checking build output structure..."
+          ls -la out/ || echo "out directory not found"
+          if [ -d "out/gopalvenki" ]; then
+            echo "basePath directory exists"
+            ls -la out/gopalvenki/ | head -20
+            if [ -f "out/gopalvenki/index.html" ]; then
+              echo "✓ index.html found in basePath"
+            else
+              echo "✗ index.html NOT found in basePath"
+            fi
+          else
+            echo "✗ basePath directory not found - checking out/ structure"
+            ls -la out/ | head -20
+          fi
+
       - name: Copy public assets to basePath
         working-directory: ./react-portfolio
         run: |
@@ -49,11 +67,12 @@ jobs:
           # Copy public folder contents to the basePath directory
           if [ -d "public" ]; then
             cp -r public/* out/gopalvenki/ 2>/dev/null || true
+            echo "Public assets copied"
           fi
           # Ensure profile image exists and verify
           if [ -f "public/profile.jpeg" ]; then
             cp public/profile.jpeg out/gopalvenki/profile.jpeg
-            echo "Profile image copied successfully"
+            echo "✓ Profile image copied successfully"
             ls -lh out/gopalvenki/profile.jpeg
           else
             echo "WARNING: profile.jpeg not found in public folder"

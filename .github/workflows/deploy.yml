@@ -44,10 +44,18 @@ jobs:
       - name: Verify build output
         working-directory: ./react-portfolio
         run: |
-          echo "Checking build output structure..."
-          ls -la out/ || echo "out directory not found"
+          echo "=== Checking build output structure ==="
+          if [ ! -d "out" ]; then
+            echo "ERROR: out directory not found!"
+            exit 1
+          fi
+          echo "Contents of out/:"
+          ls -la out/ | head -20
+          
+          # Check if basePath directory exists
           if [ -d "out/gopalvenki" ]; then
-            echo "basePath directory exists"
+            echo "✓ basePath directory (out/gopalvenki) exists"
+            echo "Contents of out/gopalvenki/:"
             ls -la out/gopalvenki/ | head -20
             if [ -f "out/gopalvenki/index.html" ]; then
               echo "✓ index.html found in basePath"
@@ -55,28 +63,54 @@ jobs:
               echo "✗ index.html NOT found in basePath"
             fi
           else
-            echo "✗ basePath directory not found - checking out/ structure"
-            ls -la out/ | head -20
+            echo "basePath directory not found - files are in out/ root"
+            if [ -f "out/index.html" ]; then
+              echo "✓ index.html found in out/ root"
+            else
+              echo "✗ index.html NOT found in out/ root"
+            fi
           fi
 
-      - name: Copy public assets to basePath
+      - name: Prepare deployment files
         working-directory: ./react-portfolio
         run: |
-          # Ensure the basePath directory exists
-          mkdir -p out/gopalvenki
-          # Copy public folder contents to the basePath directory
-          if [ -d "public" ]; then
-            cp -r public/* out/gopalvenki/ 2>/dev/null || true
-            echo "Public assets copied"
-          fi
-          # Ensure profile image exists and verify
-          if [ -f "public/profile.jpeg" ]; then
-            cp public/profile.jpeg out/gopalvenki/profile.jpeg
-            echo "✓ Profile image copied successfully"
-            ls -lh out/gopalvenki/profile.jpeg
+          # Create deployment directory
+          mkdir -p deploy
+          
+          # Determine where Next.js exported the files
+          if [ -d "out/gopalvenki" ] && [ -f "out/gopalvenki/index.html" ]; then
+            echo "Using basePath directory structure"
+            cp -r out/gopalvenki/* deploy/
+            DEPLOY_PATH="deploy"
+          elif [ -f "out/index.html" ]; then
+            echo "Using root directory structure - creating basePath structure"
+            mkdir -p deploy/gopalvenki
+            cp -r out/* deploy/gopalvenki/
+            DEPLOY_PATH="deploy/gopalvenki"
           else
-            echo "WARNING: profile.jpeg not found in public folder"
-            ls -la public/ || echo "Public folder not found"
+            echo "ERROR: Could not find index.html in expected locations"
+            exit 1
+          fi
+          
+          # Copy public assets (especially profile image)
+          if [ -f "public/profile.jpeg" ]; then
+            cp public/profile.jpeg deploy/profile.jpeg
+            echo "✓ Profile image copied to deploy root"
+          fi
+          
+          # Copy all public assets
+          if [ -d "public" ]; then
+            cp -r public/* deploy/ 2>/dev/null || true
+            echo "✓ Public assets copied"
+          fi
+          
+          echo "=== Final deployment structure ==="
+          ls -la deploy/ | head -20
+          if [ -f "deploy/index.html" ]; then
+            echo "✓ index.html ready for deployment"
+          else
+            echo "✗ index.html NOT found in deploy directory"
+            exit 1
           fi
 
       - name: Setup Pages
@@ -85,7 +119,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './react-portfolio/out/gopalvenki'
+          path: './react-portfolio/deploy'
 
   deploy:
     environment:

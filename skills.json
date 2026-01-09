@@ -1,0 +1,60 @@
+{
+  "languages": [
+    "C++17 (STL, Eigen)",
+    "Python (PyTorch, NumPy, Pandas)",
+    "MATLAB",
+    "Bash"
+  ],
+  "robotics_simulation": [
+    "ROS",
+    "MoveIt",
+    "Gazebo",
+    "ManiSkill (SAPIEN)",
+    "URDF/Xacro",
+    "RViz"
+  ],
+  "planning_control": [
+    "Graph Search (A*, ARA*)",
+    "Sampling-based (RRT*, PRM)",
+    "Multi-Agent Path Finding (MAPF/PIBT)",
+    "MPC"
+  ],
+  "ai_perception": [
+    "Reinforcement Learning (PPO, DQN)",
+    "Stable Diffusion",
+    "Transformers",
+    "Open3D",
+    "OpenCV",
+    "Point Clouds"
+  ],
+  "deep_learning_genai": [
+    "Transformers (Hugging Face)",
+    "LLM Fine-tuning (LoRA/PEFT)",
+    "Diffusion Models",
+    "RNNs/LSTMs"
+  ],
+  "retrieval_nlp": [
+    "RAG (LangChain/Firecrawl)",
+    "Vector Databases (FAISS/Chroma)",
+    "BM25",
+    "Semantic Search",
+    "BERT"
+  ],
+  "developer_tools": [
+    "Linux",
+    "Docker",
+    "Git",
+    "CMake",
+    "GDB",
+    "CI/CD"
+  ],
+  "infrastructure_tools": [
+    "Linux",
+    "Git",
+    "Docker",
+    "CUDA",
+    "Weights & Biases (W&B)",
+    "Slurm",
+    "AWS/GCP"
+  ]
+}

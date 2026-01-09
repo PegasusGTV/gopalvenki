@@ -1,0 +1,31 @@
+[
+  {
+    "institution": "Carnegie Mellon University (CMU)",
+    "location": "Pittsburgh, PA",
+    "degree": "MS in Mechanical Engineering",
+    "specialization": "Robotics, Artificial Intelligence & Motion Planning",
+    "gpa": "4.0/4.0",
+    "graduation_date": "May 2026",
+    "relevant_courses": [
+      "Planning & Decision-Making for Robotics",
+      "Generative AI",
+      "Advanced NLP",
+      "11-785: Deep Learning"
+    ]
+  },
+  {
+    "institution": "Indian Institute of Technology Madras (IIT Madras)",
+    "location": "Chennai, India",
+    "degree": "B.Tech (Honors) in Mechanical Engineering",
+    "specialization": "Minor in Artificial Intelligence and Machine Learning",
+    "gpa": "8.71/10.0",
+    "graduation_date": "June 2024",
+    "relevant_courses": [
+      "Machine Learning",
+      "Reinforcement Learning",
+      "Robotics",
+      "Multi-Armed Bandits",
+      "Stochastic Processes"
+    ]
+  }
+]

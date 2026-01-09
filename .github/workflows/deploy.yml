@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy Portfolio to GitHub Pages
 
 on:
   push:
@@ -37,97 +37,9 @@ jobs:
         working-directory: ./react-portfolio
         run: npm run build-content
 
-      - name: Build Next.js
+      - name: Build Next.js site
         working-directory: ./react-portfolio
         run: npm run build
-
-      - name: Verify build output
-        working-directory: ./react-portfolio
-        run: |
-          echo "=== Checking build output structure ==="
-          if [ ! -d "out" ]; then
-            echo "ERROR: out directory not found!"
-            exit 1
-          fi
-          echo "Contents of out/:"
-          ls -la out/ | head -20
-          
-          # Check if basePath directory exists
-          if [ -d "out/gopalvenki" ]; then
-            echo "✓ basePath directory (out/gopalvenki) exists"
-            echo "Contents of out/gopalvenki/:"
-            ls -la out/gopalvenki/ | head -20
-            if [ -f "out/gopalvenki/index.html" ]; then
-              echo "✓ index.html found in basePath"
-            else
-              echo "⚠ index.html NOT found in basePath - will check root"
-            fi
-          else
-            echo "basePath directory not found - files are in out/ root"
-            if [ -f "out/index.html" ]; then
-              echo "✓ index.html found in out/ root"
-            else
-              echo "⚠ index.html NOT found in out/ root"
-            fi
-          fi
-
-      - name: Prepare deployment files
-        working-directory: ./react-portfolio
-        run: |
-          set -e  # Exit on error
-          echo "=== Preparing deployment files ==="
-          
-          # Create deployment directory
-          rm -rf deploy
-          mkdir -p deploy
-          
-          # Determine where Next.js exported the files
-          if [ -d "out/gopalvenki" ] && [ -f "out/gopalvenki/index.html" ]; then
-            echo "✓ Using basePath directory structure (out/gopalvenki)"
-            cp -r out/gopalvenki/* deploy/ 2>&1
-            echo "Files copied from out/gopalvenki/"
-          elif [ -f "out/index.html" ]; then
-            echo "✓ Using root directory structure (out/)"
-            cp -r out/* deploy/ 2>&1
-            echo "Files copied from out/"
-          else
-            echo "ERROR: Could not find index.html in expected locations"
-            echo "Searching for index.html..."
-            find out -name "index.html" -type f 2>/dev/null || echo "No index.html found anywhere"
-            exit 1
-          fi
-          
-          # Verify index.html exists in deploy
-          if [ ! -f "deploy/index.html" ]; then
-            echo "ERROR: index.html not found in deploy directory after copy"
-            echo "Contents of deploy/:"
-            ls -la deploy/
-            exit 1
-          fi
-          
-          # Copy public assets (especially profile image)
-          if [ -f "public/profile.jpeg" ]; then
-            cp public/profile.jpeg deploy/profile.jpeg
-            echo "✓ Profile image copied to deploy root"
-          else
-            echo "⚠ Profile image not found in public folder"
-          fi
-          
-          # Copy all public assets
-          if [ -d "public" ]; then
-            cp -r public/* deploy/ 2>/dev/null || true
-            echo "✓ Public assets copied"
-          fi
-          
-          echo "=== Final deployment structure ==="
-          echo "Files in deploy/:"
-          ls -la deploy/ | head -20
-          if [ -f "deploy/index.html" ]; then
-            echo "✓ index.html ready for deployment"
-          else
-            echo "ERROR: index.html NOT found in deploy directory"
-            exit 1
-          fi
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -135,7 +47,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './react-portfolio/deploy'
+          path: './react-portfolio/out'
 
   deploy:
     environment:
@@ -147,4 +59,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-

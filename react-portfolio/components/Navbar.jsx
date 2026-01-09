@@ -29,10 +29,18 @@ const Navbar = () => {
     { name: 'Contact', href: '#contact' },
   ];
 
-  const scrollToSection = (href) => {
+  const scrollToSection = (href, e) => {
+    e?.preventDefault();
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const navbarHeight = 64; // Height of the navbar (h-16 = 64px)
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
     setIsMobileMenuOpen(false);
   };
@@ -63,7 +71,7 @@ const Navbar = () => {
                   key={item.name}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => scrollToSection(item.href)}
+                  onClick={(e) => scrollToSection(item.href, e)}
                   className="text-lightSlate hover:text-accent px-3 py-2 text-sm font-medium transition-colors duration-200"
                 >
                   {item.name}
@@ -120,7 +128,7 @@ const Navbar = () => {
                 key={item.name}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => scrollToSection(item.href)}
+                onClick={(e) => scrollToSection(item.href, e)}
                 className="text-lightSlate hover:text-accent block px-3 py-2 text-base font-medium w-full text-left"
               >
                 {item.name}

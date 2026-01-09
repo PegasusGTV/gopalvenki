@@ -20,6 +20,8 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'About', href: '#about' },
+    { name: 'Education', href: '#education' },
+    { name: 'Skills', href: '#skills' },
     { name: 'Research', href: '#research' },
     ...(publications.length > 0 ? [{ name: 'Publications', href: '#publications' }] : []),
     { name: 'Projects', href: '#projects' },

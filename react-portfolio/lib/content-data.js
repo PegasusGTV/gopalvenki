@@ -3,31 +3,140 @@ export const contentData = {
   "publications": [],
   "projects": [
     {
-      "title": "Financial Market Prediction",
-      "link": "https://example.com/financial-market-prediction",
-      "content": "Developing a Finance-Informed Neural Network for predicting SPY S&P 500 stock prices using time-series data. Leveraging FinBERT for advanced sentiment analysis of financial news, earnings reports, and market sentiment to improve prediction accuracy. This project combines deep learning techniques with financial domain knowledge to create more accurate market predictions.",
-      "slug": "financial-market-prediction"
+      "title": "Constant-Time Motion Planning (CTMP) for Robotic Manipulators",
+      "link": "",
+      "image": "projects/ctmp.png",
+      "content": "A fast and reliable motion-planning framework that guarantees constant-time generation of feasible, collision-free paths for robotic manipulators in static environments.\n\n**Motivation**: Robotic arms often struggle with real-time planning because classical methods recompute paths from scratch. This leads to delays in manufacturing, inspection, and assistive tasks. CTMP enables instant planning after a single preprocessing step.\n\n**Objective**: Design a motion-planning algorithm that produces safe paths in bounded time, regardless of start or goal location.\n\n**Methods**: Built a 2D geometric testbed with obstacle preprocessing. Encoded free space into a subgoal graph enabling constant-time queries. Developed bounded-time start/goal connectors. Preparing extension to ROS–MoveIt for UR10e in 3D.\n\n**Results**: Achieved consistent constant-time path retrieval across 50+ random trials. Verified collision-free execution for all feasible start/goal pairs. Demonstrated superior consistency compared to sampling-based re-planning.\n\n**My Role**: Designed the CTMP algorithm, implemented the planner, and conducted all experiments.",
+      "slug": "ctmp-robotic-manipulators"
     },
     {
-      "title": "Formation Control and Multi-Agent Pathfinding (MAPF)",
-      "link": "https://example.com/formation-control-mapf",
-      "content": "Developed GIF-PIBT, a cutting-edge algorithm that integrates global formation heuristics with the Priority Inheritance with Backtracking (PIBT) framework to maintain agent formations while ensuring scalable, collision-free pathfinding. Developed a multi-resolution grid system and formation-maintenance heuristic using cost functions and transformations, optimizing transitions between formation-based and individual strategies in dynamic, obstacle-rich environments.",
-      "slug": "formation-control-mapf"
+      "title": "FinDe++: Augmented Decoder-Only Model for Financial Forecasting",
+      "link": "",
+      "image": "projects/finde.png",
+      "content": "A transformer-based model that integrates market indicators, sentiment, and physics-based constraints to improve short-term stock forecasting.\n\n**Motivation**: Traditional forecasting models ignore financial dynamics and suffer from overfitting during regime shifts. A physics-informed transformer offers better stability.\n\n**Objective**: Build a decoder-only transformer that captures patterns in price, indicators, and sentiment while encouraging realistic price movement.\n\n**Methods**: Designed a pyramidal decoder-only transformer with causal masking. Embedded price, technical indicators, and FinBERT-based sentiment. Added a Geometric Brownian Motion loss to stabilize predictions.\n\n**Results**: Outperformed baseline transformers by 12–17% MAE improvement. Produced smoother, more realistic trend-following behavior. Reduced sudden prediction spikes and unrealistic volatility.\n\n**My Role**: Created the model architecture, engineered all features, and led experimentation.",
+      "slug": "finde-financial-forecasting"
     },
     {
-      "title": "House Inspection Automation",
-      "link": "https://example.com/house-inspection-automation",
-      "content": "Developed a comprehensive image-processing pipeline leveraging classical and deep learning methods to detect structural damages such as rust, cracks, and wear in property images, enabling automated and reliable inspection reports. Engineered a modular system integrating semantic segmentation and contour-based algorithms for damage localization and classification, ensuring adaptability across diverse lighting and material conditions.",
+      "title": "Automated Property Inspection with Computer Vision",
+      "link": "",
+      "image": "projects/property-inspection.png",
+      "content": "A computer-vision system that automates detection of wall chipping, rust, foundation cracks, roof wear, and water damage for home inspections.\n\n**Motivation**: Home inspection is slow, subjective, and error-prone. Automation reduces cost and improves safety for inspectors and homeowners.\n\n**Objective**: Develop a robust vision pipeline to detect and localize common housing defects using classical CV and deep learning.\n\n**Methods**: Built modules using OpenCV, thresholding, contour extraction, and Gabor filtering. Integrated thermal imaging for moisture and foundation detection. Added CNN-based segmentation for complex textures.\n\n**Results**: Achieved 92%+ detection accuracy across four damage categories. Reduced inspection time by ~35% relative to manual review. Generated standardized, interpretable inspection reports.\n\n**My Role**: Designed the detection modules, processed datasets, and implemented the reporting workflow.",
       "slug": "house-inspection-automation"
     },
     {
-      "title": "Qualitative Analysis of RL Algorithms in Various Gym Environments",
-      "link": "https://example.com/rl-algorithms-analysis",
-      "content": "Applied SARSA, Q-learning, and Dueling DQN across diverse environments, including Acrobot, Cartpole, and Taxi-v3. Leveraged advanced techniques like Monte-Carlo REINFORCE, SMDP-Q, and Dyna-Q in various gym environments. This project provided comprehensive analysis and comparison of different reinforcement learning algorithms across multiple benchmark environments.",
+      "title": "Reinforcement Learning Algorithms: From TD Learning to Hierarchical Methods",
+      "link": "",
+      "image": "projects/rl-algorithms.png",
+      "content": "A comprehensive exploration of reinforcement learning methods covering value-based, deep, and hierarchical approaches, demonstrating how architectural choices and exploration strategies influence agent performance in complex environments.\n\n**Motivation**: RL agents often struggle with stability, slow convergence, and poor exploration. Understanding how different TD learning methods and hierarchical strategies behave provides deeper insight into how real-world robotic and autonomous systems can efficiently learn long-horizon tasks.\n\n**Objective**: Study, implement, and compare multiple reinforcement learning methods — from basic Temporal-Difference algorithms to hierarchical options — and evaluate their differences in performance, convergence, and policy behavior.\n\n**Methods**: Implemented and compared SARSA vs. Q-Learning in GridWorld to analyze ε-greedy vs. softmax exploration. Extended to deep reinforcement learning, implementing Dueling DQN and Monte-Carlo REINFORCE. Explored hierarchical RL using SMDP Q-Learning and Intra-Option Q-Learning in Taxi-v3. Visualized Q-values, visitation densities, optimal actions, and convergence behavior.\n\n**Results**: Demonstrated clear differences between on-policy (SARSA) and off-policy (Q-Learning) stability. Showed that Dueling-DQN improves value estimation and reduces learning variance. Hierarchical RL significantly reduced convergence time by enabling temporally extended actions. Produced visual heatmaps revealing policy structure, state-value distributions, and option behavior.\n\n**My Role**: Designed the experiments, implemented all algorithms from scratch, created visual analysis tools, and documented comparative results.",
       "slug": "rl-algorithms-analysis"
+    },
+    {
+      "title": "Cryogenic Bone Tumor Removal Device",
+      "link": "",
+      "image": "projects/cryogenic-device.png",
+      "content": "A medical device engineered to remove bone tumors using liquid nitrogen cryogenic cooling, enabling minimally invasive treatment with improved patient safety and reduced recovery time.\n\n**Motivation**: Bone tumor removal traditionally requires invasive surgery, leading to long recovery times and increased complications. Cryogenic ablation allows targeted tumor destruction while preserving healthy tissue and minimizing surgical trauma.\n\n**Objective**: Design, model, and evaluate a cryogenic surgical tool capable of safely delivering extremely low temperatures to tumor tissue while maintaining structural integrity and thermal isolation.\n\n**Methods**: Designed a sealed, vacuum-insulated chamber using SS 304 stainless steel for durability and biocompatibility. Integrated a liquid nitrogen cooling line for rapid temperature drop. Performed COMSOL Multiphysics simulations (2D & 3D) to analyze heat transfer and cooling gradients, thermal stress distribution, and safety margins for surrounding healthy bone. Optimized geometry and insulation layers to maintain steady cryogenic delivery during operation.\n\n**Results**: Achieved rapid localized cooling suitable for tumor ablation. Thermal analysis confirmed minimal temperature rise in surrounding tissue, validating the insulation design. Stress simulations verified structural stability during extreme temperature changes.\n\n**My Role**: Designed the device geometry, authored CAD models, performed all COMSOL simulations, and validated thermal/structural performance.",
+      "slug": "cryogenic-bone-tumor-device"
+    },
+    {
+      "title": "Swarm Planning with Adaptive Map Discretization",
+      "link": "",
+      "image": "projects/swarm-planning.png",
+      "content": "A hierarchical swarm-planning framework for coordinated multi-drone navigation using dynamic grid discretization to reduce computation cost.\n\n**Motivation**: Swarm robotics can improve mapping, disaster response, and surveillance — but real-time planning becomes expensive in dense environments. Adaptive resolution avoids unnecessary computation.\n\n**Objective**: Enable drone swarms to maintain formation while navigating cluttered areas using efficient, locally adaptive grids.\n\n**Methods**: Built a two-tier planner (leader–follower + local navigation). Introduced adaptive grid refinement near obstacles. Simulated multi-agent movement through varying-density environments.\n\n**Results**: Reduced planning time by 38% vs. uniform grid resolution. Achieved stable formation flight across all simulations. Improved smoothness of trajectories and reduced collision risk.\n\n**My Role**: Developed the algorithm, created the simulation environment, and analyzed performance.",
+      "slug": "swarm-planning-adaptive-discretization"
     }
   ],
   "awards": [],
+  "education": [
+    {
+      "institution": "Carnegie Mellon University (CMU)",
+      "location": "Pittsburgh, PA",
+      "degree": "MS in Mechanical Engineering",
+      "specialization": "Robotics, Artificial Intelligence & Motion Planning",
+      "gpa": "4.0/4.0",
+      "graduation_date": "May 2026",
+      "relevant_courses": [
+        "Planning & Decision-Making for Robotics",
+        "Generative AI",
+        "Advanced NLP",
+        "11-785: Deep Learning"
+      ]
+    },
+    {
+      "institution": "Indian Institute of Technology Madras (IIT Madras)",
+      "location": "Chennai, India",
+      "degree": "B.Tech (Honors) in Mechanical Engineering",
+      "specialization": "Minor in Artificial Intelligence and Machine Learning",
+      "gpa": "8.71/10.0",
+      "graduation_date": "June 2024",
+      "relevant_courses": [
+        "Machine Learning",
+        "Reinforcement Learning",
+        "Robotics",
+        "Multi-Armed Bandits",
+        "Stochastic Processes"
+      ]
+    }
+  ],
+  "skills": {
+    "languages": [
+      "C++17 (STL, Eigen)",
+      "Python (PyTorch, NumPy, Pandas)",
+      "MATLAB",
+      "Bash"
+    ],
+    "robotics_simulation": [
+      "ROS",
+      "MoveIt",
+      "Gazebo",
+      "ManiSkill (SAPIEN)",
+      "URDF/Xacro",
+      "RViz"
+    ],
+    "planning_control": [
+      "Graph Search (A*, ARA*)",
+      "Sampling-based (RRT*, PRM)",
+      "Multi-Agent Path Finding (MAPF/PIBT)",
+      "MPC"
+    ],
+    "ai_perception": [
+      "Reinforcement Learning (PPO, DQN)",
+      "Stable Diffusion",
+      "Transformers",
+      "Open3D",
+      "OpenCV",
+      "Point Clouds"
+    ],
+    "deep_learning_genai": [
+      "Transformers (Hugging Face)",
+      "LLM Fine-tuning (LoRA/PEFT)",
+      "Diffusion Models",
+      "RNNs/LSTMs"
+    ],
+    "retrieval_nlp": [
+      "RAG (LangChain/Firecrawl)",
+      "Vector Databases (FAISS/Chroma)",
+      "BM25",
+      "Semantic Search",
+      "BERT"
+    ],
+    "developer_tools": [
+      "Linux",
+      "Docker",
+      "Git",
+      "CMake",
+      "GDB",
+      "CI/CD"
+    ],
+    "infrastructure_tools": [
+      "Linux",
+      "Git",
+      "Docker",
+      "CUDA",
+      "Weights & Biases (W&B)",
+      "Slurm",
+      "AWS/GCP"
+    ]
+  },
   "hero": {
     "name": "Gopalakrishnan Thirunellai Venkitachalam",
     "title": "Master's of Science, AI & Robotics Research",
@@ -36,12 +145,11 @@ export const contentData = {
     "profile_initials": "GV",
     "profile_image": "profile.jpeg",
     "email": "gopalakt@andrew.cmu.edu",
-    "phone": "+1 (412) 909-7233",
     "github": "https://github.com/PegasusGTV",
     "linkedin": "https://www.linkedin.com/in/gopalakrishnan-thirunellai-venkitachalam",
     "scholar": "",
     "resume": "",
-    "content": "## Social Links\n\n- **Email**: [gopalakt@andrew.cmu.edu](mailto:gopalakt@andrew.cmu.edu)\n- **Phone**: [+1 (412) 909-7233](tel:+14129097233)\n- **LinkedIn**: [LinkedIn Profile](https://www.linkedin.com/in/gopalakrishnan-thirunellai-venkitachalam)\n- **GitHub**: [GitHub Profile](https://github.com/PegasusGTV)\n\n## Background Elements\n\n- Background pattern with gradient circles\n- Scroll down indicator with animated arrow\n- Profile image placeholder with initials"
+    "content": "## Social Links\n\n- **Email**: [gopalakt@andrew.cmu.edu](mailto:gopalakt@andrew.cmu.edu)\n- **LinkedIn**: [LinkedIn Profile](https://www.linkedin.com/in/gopalakrishnan-thirunellai-venkitachalam)\n- **GitHub**: [GitHub Profile](https://github.com/PegasusGTV)\n\n## Background Elements\n\n- Background pattern with gradient circles\n- Scroll down indicator with animated arrow\n- Profile image placeholder with initials"
   },
   "about": {
     "title": "About Me",
@@ -57,7 +165,7 @@ export const contentData = {
     "description": "I'm always interested in discussing new research opportunities, collaborations, and innovative projects in AI, robotics, and motion planning.",
     "primary_cta": "Send me an email",
     "primary_cta_link": "mailto:gopalakt@andrew.cmu.edu",
-    "content": "## Contact Information\n\n### Email\n- **Type**: Email\n- **Value**: gopalakt@andrew.cmu.edu\n- **Link**: mailto:gopalakt@andrew.cmu.edu\n\n### Phone\n- **Type**: Phone\n- **Value**: +1 (412) 909-7233\n- **Link**: tel:+14129097233\n\n### LinkedIn\n- **Type**: LinkedIn\n- **Value**: Connect\n- **Link**: https://www.linkedin.com/in/gopalakrishnan-thirunellai-venkitachalam\n\n### GitHub\n- **Type**: GitHub\n- **Value**: View Profile\n- **Link**: https://github.com/PegasusGTV"
+    "content": "## Contact Information\n\n### Email\n- **Type**: Email\n- **Value**: gopalakt@andrew.cmu.edu\n- **Link**: mailto:gopalakt@andrew.cmu.edu\n\n### LinkedIn\n- **Type**: LinkedIn\n- **Value**: Connect\n- **Link**: https://www.linkedin.com/in/gopalakrishnan-thirunellai-venkitachalam\n\n### GitHub\n- **Type**: GitHub\n- **Value**: View Profile\n- **Link**: https://github.com/PegasusGTV"
   },
   "interests": {
     "title": "Research Interests",

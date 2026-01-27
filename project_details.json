@@ -2,27 +2,27 @@
   {
     "title": "Search Based Planning Lab, Robotics Institute, CMU",
     "location": "Pittsburgh, PA",
-    "role": "Graduate Research Assistant",
+    "role": "Graduate Researcher",
     "advisor": "Prof. Maxim Likhachev",
     "date": "Sept. 2024 – Present",
     "description": [
-      "Architecting a high-frequency C++ motion planning framework (CTMP) for contact-rich manipulation, targeting deterministic (<50ms) planning times for hook-latch disengagement tasks.",
-      "Developing a skill-extraction framework that generalizes search-based plans into parameterized motion skills, enabling rapid adaptation to new hook-latch configurations without expensive global re-planning.",
-      "Implementing a hybrid controller that dynamically switches between task-space Cartesian control and active-joint subspace planning (reducing effective search dimensions by ~60%) to navigate tight contact constraints.",
-      "Building a high-fidelity hardware-in-the-loop (HIL) benchmarking suite using ROS, MoveIt, and SAPIEN to validate sim-to-real transfer on a UR10e manipulator under strict 10ms control loop limits."
+      "Formulated ”Task-Metric Experience Graphs” (TMEG), a C++ framework that adapts cached experience to dynamic constraints, solving the ”static world” limitation of standard E-Graphs for contact-rich manipulation.",
+      "Engineered a Lipschitz-bounded heuristic derived from the spectral norm of the Weighted Jacobian, guaranteeing mathematical consistency and admissibility for A* search even when task targets shift.",
+      "Implemented high-performance search primitives within the SMPL library, optimizing the sbpl codebase to support weighted SE(3) metrics (Geodesic rotation) and enabling real-time warping of trajectories.",
+      "Deployed and validated the stack on a Ridgeback-UR10e manipulator using ROS/MoveIt, achieving robust latch-disengagement in unstructured environments where standard planners failed."
     ],
     "links": []
   },
   {
-    "title": "16-832 Special Topics: Integrated Planning & Learning, CMU",
+    "title": "Autonomous Manipulation & Planning Simulation Framework, CMU",
     "location": "Pittsburgh, PA",
     "role": "Teaching Assistant",
     "advisor": "Prof. Maxim Likhachev",
     "date": "Dec. 2025 – Present",
     "description": [
-      "Engineered a high-reliability Python middleware for ManiSkill/SAPIEN, abstracting low-level physics into a structured planning-centric API that standardizes state access and determinism for student research.",
-      "Architected a standalone Multi-Agent Path Finding (MAPF) simulation engine featuring custom collision checking, dataset ingestion, and real-time visualization to enable lightweight prototyping without heavy external simulators.",
-      "Developing an automated evaluation pipeline to benchmark planner performance, quantitatively analyzing theoretical optimality guarantees and cost-function convergence across diverse test suites."
+      "Designed a high-performance Python middleware wrapping ManiSkill/SAPIEN, abstracting complex physics engine interactions into a unified, deterministic API to accelerate algorithm development and deployment.",
+      "Built a lightweight Multi-Agent Path Finding (MAPF) engine from scratch, engineering custom collision kernels and data pipelines to reduce simulation overhead by removing external dependencies.",
+      "Developed an automated benchmarking pipeline to quantify planner performance, implementing rigorous regression testing for theoretical optimality, cost convergence, and runtime efficiency across large-scale test suites."
     ],
     "links": [
       "https://github.com/PegasusGTV/Planning_wrapper",
@@ -30,15 +30,15 @@
     ]
   },
   {
-    "title": "Iterative 2D–3D Inpainting for Single-Image 3D Reconstruction | CMU",
+    "title": "Generative Single-View 3D Reconstruction Pipeline | CMU",
     "location": null,
     "role": null,
     "advisor": null,
     "date": "Sept. 2025 – Dec. 2025",
     "description": [
-      "Architected a self-correcting 3D reconstruction framework that couples Latent Diffusion (2D inpainting) with Monocular Depth Estimation (Depth-Anything-V2) to synthesize and recover occluded geometry from single-view RGB inputs.",
-      "Implemented a custom 3D inpainting algorithm (Open3D, Poisson Reconstruction) that iteratively detects sparse point-density regions and repairs geometric noise, solving the \"depth instability\" problem inherent in generative lifting.",
-      "Outperformed the TripoSR baseline on synthetic benchmarks, reducing Chamfer Distance by 55% (0.066 → 0.030) and increasing Multi-View Consistency (MVCS) from 0.938 → 0.971, demonstrating superior structural completeness."
+      "Engineered an end-to-end generative 3D pipeline that fuses Latent Diffusion inpainting with Monocular Depth Estimation (Depth-Anything-V2) to autonomously synthesize complete, watertight 3D meshes from single RGB images.",
+      "Developed a novel iterative geometry repair algorithm using Open3D, which dynamically detects low-density point cloud regions and applies Poisson reconstruction to resolve occlusions and eliminating geometric artifacts.",
+      "Achieved better performance vs TripoSR, reducing Chamfer Distance by 55% (0.066 → 0.030)and boosting structural consistency to 0.971, validating high-quality asset generation."
     ],
     "links": [
       "https://github.com/PegasusGTV/2d_to_3d",
@@ -47,28 +47,30 @@
     ]
   },
   {
-    "title": "Formation Control and Multi-Agent Pathfinding (MAPF) | CMU",
+    "title": "Constraint-Aware Path Planning for Large-Scale Robotics | CMU",
     "location": null,
     "role": null,
     "advisor": null,
     "date": "Sept. 2024 – Dec. 2024",
     "description": [
-      "Engineered a high-performance C++ formation control solver (GIF-PIBT) that integrates SVD-based rigid-body alignment (using Eigen) into the PIBT heuristic, enabling real-time shape maintenance for large-scale swarms in obstacle-dense environments.",
-      "Designed a hierarchical cost-routing framework that dynamically balances formation rigidity vs. goal progression, demonstrating superior shape preservation and routing stability over PIBT baselines across complex grid maps."
+      "Developed a highly optimized C++ formation control solver utilizing the Eigen library for linear algebra operations, integrating Singular Value Decomposition (SVD) to enforce rigid-body constraints at sub-millisecond latencies.",
+      "Architected a real-time coordination algorithm based on Priority Inheritance with Backtracking (PIBT), enabling collision-free navigation for large-scale swarms in highly unstructured, obstacle-dense environments without gridlocking.",
+      "Solved the ”formation fracture” problem by designing a hierarchical cost function that dynamically weights geometric integrity against path efficiency, outperforming standard baselines in maintaining swarm cohesion under heavy congestion."
     ],
     "links": [
       "https://drive.google.com/file/d/1BDGaLfMNEi4QUJfHbn7l-VoKXCDnaVkP/view?usp=sharing"
     ]
   },
   {
-    "title": "Dynamics Analysis of Model-Free RL Algorithms (NumPy-Only) | IIT Madras",
+    "title": "Algorithmic Stability & Convergence Analysis of RL Systems | IIT Madras",
     "location": null,
     "role": null,
     "advisor": null,
     "date": "Jan. 2024 – May 2024",
     "description": [
-      "Engineered bare-metal implementations of Dueling DQN and REINFORCE using only NumPy and SymPy, manually deriving and coding gradient updates to eliminate high-level framework overhead.",
-      "Analyzed convergence failure modes in stochastic control tasks, identifying that while off-policy methods improved sample efficiency by 40%, they suffered from high-variance instability in noisy reward regimes compared to on-policy baselines."
+      "Implemented a dependency-free RL library in NumPy, implementing custom backpropagation kernels for Dueling DQN and REINFORCE to bypass high-level framework overhead and expose core gradient dynamics.",
+      "Validated manual gradient derivation pipelines using SymPy, validating theoretical update rules against runtime behavior to ensure numerical precision in policy optimization steps.",
+      "Benchmarked algorithmic stability in stochastic environments, isolating a 40% improvement in sample efficiency for off-policy methods while quantitatively profiling variance sensitivity in noisy reward signals."
     ],
     "links": []
   },

@@ -1,36 +1,12 @@
 ---
-title: "Current Research"
-description: "My research focuses on developing efficient motion planning algorithms for robotics applications, with particular emphasis on real-time planning for mobile manipulators and multi-agent systems."
+title: "Research Focus"
+description: "My research primarily focuses on Motion Planning and Multi-Agent Systems. Specifically, my work encompasses two key areas:"
 ---
 
-## Current Research
+## Research Areas
 
-🔬 **Constant Time Motion Planning (CTMP) for Mobile Manipulators**  
-Developing algorithms for optimizing dynamic task allocation and motion planning in warehouse robotics. Implementing solutions in C++ & ROS to enhance real-time adaptability and execution efficiency. Working on simulated door-opening tasks with Ridgeback UR10e teleoperation in SAPien and Maniskill, demonstrating precision for hazardous applications like nuclear waste disposal.
+### Task-Metric Experience Graphs (TMEG) for Dynamic Manipulation
+Developing frameworks that adapt cached motion plans to dynamic constraints, solving the "static world" limitation of standard Experience Graphs. I focus on offline-to-online planning frameworks that leverage task-metric diversity in cached solutions and enable efficient real-time adaptation for contact-rich manipulation tasks.
 
-## Research Focus Areas
-
-### Motion Planning
-- Real-time motion planning for mobile manipulators
-- Constant-time planning algorithms
-- Pathfinding in complex, dynamic environments
-- Warehouse robotics automation
-
-### Multi-Agent Systems
-- Formation control algorithms
-- Multi-agent pathfinding (MAPF)
-- Coordination strategies for collaborative systems
-- Dynamic task allocation
-
-### Machine Learning Applications
-- Reinforcement learning for robotics
-- Deep learning for motion prediction
-- Neural network-based planning strategies
-
-## Research Environment
-
-- **Laboratory**: Search Based Planning Lab, Robotics Institute, CMU
-- **Advisor**: Prof. Maxim Likhachev
-- **Tools & Technologies**: C++, ROS, SAPien, Maniskill, Python, PyTorch
-- **Applications**: Warehouse automation, hazardous environment operations, nuclear waste disposal
-
+### Constraint-Aware Multi-Agent Path Planning
+Developing coordination algorithms for large-scale robotic swarms by leveraging formation constraints and analyzing historical path patterns to identify and exploit collision-free navigation strategies in dense, unstructured environments.

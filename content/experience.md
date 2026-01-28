@@ -1,7 +1,7 @@
 ---
 title: "Previous Experience"
-future_vision: "I am fascinated by how intelligent agents can learn structured, transferable policies that generalize across tasks, embodiments, and environments, moving toward autonomous systems capable of learning and reasoning like humans. My long-term goal is to develop generalist robot policies that unify learning, reasoning, and control, advancing adaptable embodied agents for diverse real-world tasks."
-beyond_research: "Outside the lab, I enjoy ♟️ Chess, 🏸 Squash, and 🏓 Table Tennis. I'm a dedicated ☕ coffee enthusiast who enjoys strategy both on and off the board. I also enjoy reading books, watching sci-fi movies and TV shows."
+future_vision: "I am driven to transition robotics from controlled labs to unstructured real-world environments. My focus is on building \"generalist\" robot policies that can reason and adapt on the fly. By combining rigorous motion planning with modern learning techniques, I aim to create autonomous agents that solve meaningful problems—reliably and at scale."
+beyond_research: "I thrive on motion and strategy. I am a competitive athlete in soccer, running, and table tennis, and I enjoy mixing it up with squash or volleyball. To balance the physical intensity, I prioritize mental clarity through meditation and long walks, which is often where I do my best thinking."
 stats:
   research_years: "2+"
   job_years: "1+"
@@ -11,7 +11,7 @@ stats:
 ## Previous Experience
 
 ### B.Tech Thesis - Device for Cryogenic Tumor Removal
-**Guided by:** [Dr. Sarit K Das](https://www.iitm.ac.in/), Institute Professor and V. Balakrishnan Chair Professor, IIT Madras  
+**Guided by:** [Dr. Sarit K Das](https://home.iitm.ac.in/skdas/), Institute Professor and V. Balakrishnan Chair Professor, IIT Madras  
 **Affiliation:** Indian Institute of Technology, Madras  
 **Duration:** Sep 2022 - May 2024
 

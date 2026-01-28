@@ -7,6 +7,7 @@ import PreviousExperience from '../components/PreviousExperience'
 import Education from '../components/Education'
 import Skills from '../components/Skills'
 import Interests from '../components/Interests'
+import Patents from '../components/Patents'
 import Publications from '../components/Publications'
 import Projects from '../components/Projects'
 import Awards from '../components/Awards'
@@ -30,6 +31,7 @@ export default function Home() {
         <Research />
         <PreviousExperience />
         <Interests />
+        <Patents />
         <Education />
         <Skills />
         <Publications />

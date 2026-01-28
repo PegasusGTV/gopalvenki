@@ -4,6 +4,7 @@ const matter = require('gray-matter');
 
 // Content directory path
 const contentDirectory = path.join(__dirname, '..', '..', 'content');
+const rootDirectory = path.join(__dirname, '..', '..');
 
 // Load markdown files from content directory
 function loadMarkdownFiles(directory) {
@@ -54,11 +55,51 @@ function loadMarkdownFile(fileName) {
   }
 }
 
+// Load projects from project_details.json
+function loadProjectsFromJSON() {
+  try {
+    const jsonPath = path.join(rootDirectory, 'project_details.json');
+    if (!fs.existsSync(jsonPath)) {
+      return [];
+    }
+    
+    const fileContents = fs.readFileSync(jsonPath, 'utf8');
+    const projects = JSON.parse(fileContents);
+    
+    return projects.map((project, index) => {
+      // Convert description array to formatted content
+      const content = project.description.join('\n\n');
+      
+      // Generate slug from title
+      const slug = project.title
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+      
+      return {
+        ...project,
+        content: content,
+        slug: slug || `project-${index}`,
+        description: project.description // Keep original array for component use
+      };
+    });
+  } catch (error) {
+    console.error('Error loading projects from JSON:', error);
+    return [];
+  }
+}
+
 // Generate content data
 function generateContentData() {
+  // Load projects from JSON (priority) or fallback to markdown
+  const projectsFromJSON = loadProjectsFromJSON();
+  const projectsFromMarkdown = loadMarkdownFiles('projects');
+  const projects = projectsFromJSON.length > 0 ? projectsFromJSON : projectsFromMarkdown;
+  
   const contentData = {
     publications: loadMarkdownFiles('publications'),
-    projects: loadMarkdownFiles('projects'),
+    patents: loadMarkdownFiles('patents'),
+    projects: projects,
     awards: loadMarkdownFiles('awards'),
     hero: loadMarkdownFile('hero'),
     about: loadMarkdownFile('about'),

@@ -25,6 +25,10 @@ const Interests = () => {
       lines.forEach(line => {
         if (line.includes('**Description**:')) {
           description = line.replace(/\*\*Description\*\*:\s*/, '').trim();
+          // Remove leading dash if present
+          if (description.startsWith('- ')) {
+            description = description.substring(2);
+          }
         }
         if (line.includes('**Icon**:')) {
           icon = line.replace(/\*\*Icon\*\*:\s*/, '').trim();
@@ -41,40 +45,40 @@ const Interests = () => {
 
   const interests = parseInterests(interestsData?.content) || [
     {
-      title: "Motion Planning",
-      description: "Developing efficient algorithms for real-time motion planning in robotics, including constant-time planning for mobile manipulators and pathfinding in complex environments.",
+      title: "Search-Based Motion Planning",
+      description: "Specializing in high-dimensional planning for manipulators and mobile bases. My work focuses on anytime algorithms (like ARA*, MHA*) and experience-based planning (E-Graphs) to solve complex kinematic constraints in real-time, ensuring theoretical guarantees on completeness and optimality.",
       icon: "🗺️"
     },
     {
-      title: "Multi-Agent Systems",
-      description: "Researching formation control, multi-agent pathfinding (MAPF), and coordination algorithms for collaborative robotic systems.",
-      icon: "👥"
-    },
-    {
-      title: "Machine Learning & Deep Learning",
-      description: "Applying machine learning techniques including reinforcement learning, deep learning, and neural networks to solve robotics and prediction problems.",
+      title: "Generative AI for Robotics",
+      description: "Leveraging modern generative models—including Diffusion Models and Flow Matching—to represent complex multi-modal distributions for robot policies. I explore how these models can serve as learned heuristics to accelerate classical planners in sparse-reward environments.",
       icon: "🤖"
     },
     {
-      title: "Computer Vision",
-      description: "Developing computer vision solutions for robotics applications, including object detection, semantic segmentation, and visual recognition systems.",
+      title: "Multi-Agent Coordination",
+      description: "Architecting scalable solutions for Multi-Agent Path Finding (MAPF). I develop decentralized coordination algorithms (like GIF-PIBT) that allow large-scale fleets to navigate shared spaces efficiently, balancing global flow optimization with local collision avoidance.",
+      icon: "👥"
+    },
+    {
+      title: "Perception for Planning",
+      description: "Moving beyond passive detection to active perception. I integrate semantic scene understanding and 3D reconstruction into the planning loop, allowing agents to make informed decisions based on the geometry and semantics of their environment.",
       icon: "👁️"
     },
     {
-      title: "Control Systems",
-      description: "Designing and implementing control systems for robotic applications, including predictive control and real-time system optimization.",
+      title: "Control & Dynamics",
+      description: "Grounding AI in physics. I design robust low-level controllers (MPC, Whole-Body Control) that ensure high-level plans are dynamically feasible. My background in mechanical engineering ensures a tight coupling between software commands and hardware capabilities.",
       icon: "🎛️"
     },
     {
-      title: "Data Analytics",
-      description: "Analyzing large-scale datasets using statistical methods, clustering, and visualization techniques for engineering applications.",
-      icon: "📊"
+      title: "Simulation & Sim-to-Real",
+      description: "Bridging the reality gap. I utilize high-fidelity physics engines (Isaac Gym, MuJoCo) to validate policies at scale before deployment. My workflow involves domain randomization and system identification to ensure code that works in sim works on the real robot.",
+      icon: "🔬"
     }
   ];
 
   return (
     <section id="research" ref={ref} className={`py-20 transition-colors duration-300 ${
-      theme === 'light' ? 'bg-white' : 'bg-navy'
+      theme === 'light' ? 'bg-blue-50' : 'bg-navy'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div

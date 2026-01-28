@@ -1,84 +1,82 @@
 ---
 title: "About Me"
-current_position: "Graduate Research Assistant at Search Based Planning Lab, Robotics Institute, CMU"
-advisor: "Prof. Maxim Likhachev"
-previous_position: "Research Intern in ML, Control, and Data Analytics at Caterpillar Inc."
-education: "B.Tech in Mechanical Engineering with Honors from IIT Madras"
-achievement: "GPA 4.0/4.0 at CMU, GPA 8.71/10.0 at IIT Madras"
+name: "Gopalakrishnan (Gopal) T. Venkitachalam"
+tagline: "Robotics Researcher bridging the gap between Classical Planning and Learning-Based Control."
+current_position: "Graduate Researcher @ Search Based Planning Lab (SBPL), CMU"
+email: "[Your Email]"
+socials:
+  - name: LinkedIn
+    url: "https://linkedin.com/in/[your-profile]"
+  - name: GitHub
+    url: "https://github.com/[your-handle]"
+  - name: Scholar
+    url: "[Google Scholar Link]"
 ---
 
-## About Me
+## 👋 About Me
 
-Hello! I'm Gopalakrishnan Thirunellai Venkitachalam (Gopal), a Master's student in AI & Robotics Research, Mechanical Engineering at [Carnegie Mellon University](https://www.cmu.edu/). I'm currently working as a Graduate Research Assistant at the [Search Based Planning Lab](https://www.cs.cmu.edu/~maxim/), [Robotics Institute](https://www.ri.cmu.edu/), under the guidance of [Prof. Maxim Likhachev](https://www.cs.cmu.edu/~maxim/).
+I am a **Graduate Researcher** at the [Robotics Institute, Carnegie Mellon University](https://www.ri.cmu.edu/), advised by [Prof. Maxim Likhachev](https://www.cs.cmu.edu/~maxim/). My research focuses on **Motion Planning** for high-degree-of-freedom (DOF) systems, specifically tackling the challenges of real-time performance in constrained, unstructured environments.
 
-My research focuses on developing efficient motion planning algorithms for robotics applications, with particular emphasis on real-time planning for mobile manipulators and multi-agent systems.
+I am currently building **Constant Time Motion Planning (CTMP)** frameworks that allow mobile manipulators to operate safely and efficiently in dynamic settings—ranging from warehouse automation to hazardous waste disposal. My work bridges the gap between the theoretical guarantees of graph search algorithms and the adaptability of modern learning-based heuristics.
 
----
-
-## Current Research
-
-🔬 **Constant Time Motion Planning (CTMP) for Mobile Manipulators**  
-Developing algorithms for optimizing dynamic task allocation and motion planning in warehouse robotics. Implementing solutions in C++ & ROS to enhance real-time adaptability and execution efficiency. Working on simulated door-opening tasks with Ridgeback UR10e teleoperation in SAPien and Maniskill, demonstrating precision for hazardous applications like nuclear waste disposal.
-
----
-
-## Education
-
-🎓 **Master's of Science, AI & Robotics Research, Mechanical Engineering**  
-[Carnegie Mellon University](https://www.cmu.edu/), Pittsburgh, PA  
-*May 2026 (Expected)* | GPA: 4.0/4.0
-
-**Relevant Courses**: Deep Learning, Planning & Decision-Making, Computer Vision for Robotics, Modern Control Theory
+Previously, I graduated with Honors from **IIT Madras**, where I specialized in AI & Robotics. I also spent time at **Caterpillar Inc.**, applying machine learning and control theory to optimize large-scale industrial systems.
 
 ---
 
-🎓 **Bachelor of Technology in Mechanical Engineering with Honors**  
-[Indian Institute of Technology Madras](https://www.iitm.ac.in/), Chennai, India  
-*June 2024* | GPA: 8.71/10.0 | Minor in Artificial Intelligence and Machine Learning
+## 🔬 Research Focus
 
-**Relevant Courses**: Machine Learning, Reinforcement Learning, Deep Learning, Multi-Armed Bandits, Field and Service Robotics, Multi-Body Dynamics, Stochastic Processes, Signal Processing, Control of Automotive Systems, Design and Optimization
+My core research interest lies in **Search-Based Planning** and **AI for Robotics**. I am particularly interested in:
+* **Real-Time Motion Planning:** reducing planning times for 7-DOF arms from seconds to milliseconds.
+* **Experience-Based Planning:** Leveraging past solutions to accelerate future queries in similar environments.
+* **Generative AI for Robotics:** Using diffusion models and transformers to guide search heuristics.
 
----
+### **Current Project: Constant Time Motion Planning (CTMP)**
+*At the Search Based Planning Lab (SBPL)*
 
-## Work Experience
-
-📚 **Graduate Research Assistant** — [Search Based Planning Lab](https://www.cs.cmu.edu/~maxim/), Robotics Institute, CMU  
-*September 2024 – Present* | Advisor: [Prof. Maxim Likhachev](https://www.cs.cmu.edu/~maxim/)
-
-- Developing Constant Time Motion Planning (CTMP) algorithms for mobile manipulators
-- Optimizing dynamic task allocation and motion planning in warehouse robotics
-- Implementing solutions in C++ & ROS for real-time adaptability
-- Simulating door-opening tasks with Ridgeback UR10e teleoperation in SAPien and Maniskill
+I am developing a novel planning framework designed to provide bounded-time guarantees for mobile manipulation. Key contributions include:
+* **Task-Metric Experience Graphs (TMEG):** A framework that adapts cached motion plans to dynamic constraints, solving the "static world" limitation of standard E-Graphs.
+* **Lipschitz-Bounded Heuristics:** Engineered mathematically consistent heuristics derived from the Weighted Jacobian spectral norm to guide A* search effectively.
+* **Sim-to-Real Validation:** Validating algorithms on a **Ridgeback-UR10e** mobile manipulator for contact-rich tasks (e.g., door opening, debris removal) using **ROS** and **MoveIt**.
 
 ---
 
-🏭 **Research Intern in ML, Control, and Data Analytics** — [Caterpillar Inc.](https://www.caterpillar.com/)  
-*May 2023 – January 2024* | Chennai, India
-
-- Developed MATLAB and Simulink models for predicting diesel engine exhaust gas temperature dynamics
-- Implemented Python scripts for cleaning and analyzing large-scale engine datasets using PCA and K-means clustering
-- Designed data visualization dashboard with Plotly for spectral and operational cycle analysis
+## 🗞️ Updates
+* **Jan 2026:** Selected as a Teaching Assistant for **16-832: Integrated Planning & Learning** and **10-623: Generative AI** at CMU.
+* **Jan 2026:** Developing a high-performance Python wrapper for **ManiSkill/SAPIEN** to accelerate planning research.
+* **2025:** Filed a patent for a **Cryogenic Surgical Device** (App No: 202541075423).
 
 ---
 
-## Technical Skills
+## 🎓 Education
 
-**Programming Languages**: C++, Python, C, MATLAB & Simulink, Linux, Git
+**Carnegie Mellon University** | *Pittsburgh, PA*
+**M.S. in Mechanical Engineering (Research)** | *Expected May 2026*
+* **GPA:** 4.0/4.0
+* **Key Coursework:** Planning & Decision Making in Robotics (16-782), Deep Learning (11-785), Generative AI (10-623), Advanced NLP (11-711).
 
-**Frameworks & Tools**: PyTorch, TensorFlow, Scikit-learn, OpenCV, MoveIt, ROS, Pandas, NumPy, SymPy, Vaex
-
-**Areas of Expertise**: Machine Learning, Deep Learning, Reinforcement Learning, Motion Planning, Computer Vision, Control Systems
+**Indian Institute of Technology, Madras** | *Chennai, India*
+**B.Tech (Honors) in Mechanical Engineering** | *June 2024*
+* **GPA:** 8.71/10.0
+* **Minor:** Artificial Intelligence & Machine Learning.
+* **Key Coursework:** Reinforcement Learning, Multi-Armed Bandits, Stochastic Processes, Control Systems.
 
 ---
 
-## 🔭 Research Interests
+## 💼 Industry Experience
 
-My research interests span motion planning, multi-agent systems, machine learning, and robotics. I'm particularly interested in developing efficient algorithms that can operate in real-time for practical robotic applications, including warehouse automation, hazardous environment operations, and multi-agent coordination.
+**Caterpillar Inc.** | *Research Intern (Data Analytics & Controls)*
+*Chennai, India | May 2023 – Jan 2024*
+* Built **Machine Learning pipelines** (K-Means, PCA) to analyze large-scale engine field data, automating cycle detection.
+* Diagnosed numerical instabilities in Mean Value Engine Models (MVEM) using **MATLAB/Simulink**.
+* Developed interactive spectral analysis dashboards using **Plotly** to drive engineering decisions.
 
 ---
 
-## Research Statistics
+## 🛠️ Tech Stack
 
-- **Current GPA**: 4.0/4.0 (CMU)
-- **Research Experience**: 2+ years
-- **Industry Experience**: 1+ year
+| Category | Tools |
+| :--- | :--- |
+| **Languages** | C++, Python, MATLAB, C |
+| **Robotics** | ROS 1/2, MoveIt, OMPL, ManiSkill, SAPIEN, Gazebo |
+| **AI/ML** | PyTorch, TensorFlow, Scikit-learn, Vaex |
+| **Tools** | Linux, Git, Docker, CMake, SolidWorks, COMSOL |

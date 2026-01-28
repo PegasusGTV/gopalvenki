@@ -14,7 +14,7 @@ const Education = () => {
 
   return (
     <section id="education" ref={ref} className={`py-20 transition-colors duration-300 ${
-      theme === 'light' ? 'bg-gray-50' : 'bg-navy'
+      theme === 'light' ? 'bg-blue-50' : 'bg-navy'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div

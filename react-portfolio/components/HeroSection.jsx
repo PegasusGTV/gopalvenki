@@ -53,7 +53,7 @@ const HeroSection = () => {
 
   return (
     <section className={`min-h-screen flex items-center justify-center relative overflow-hidden transition-colors duration-300 ${
-      theme === 'light' ? 'bg-gray-50' : 'bg-navy'
+      theme === 'light' ? 'bg-blue-50' : 'bg-navy'
     }`}>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <motion.div

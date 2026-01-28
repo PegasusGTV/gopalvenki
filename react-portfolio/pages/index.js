@@ -14,9 +14,15 @@ import Awards from '../components/Awards'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 
+import { useTheme } from '../contexts/ThemeContext';
+
 export default function Home() {
+  const { theme } = useTheme();
+  
   return (
-    <div className="min-h-screen bg-navy">
+    <div className={`min-h-screen transition-colors duration-300 ${
+      theme === 'light' ? 'bg-blue-50' : 'bg-navy'
+    }`}>
       <Head>
         <title>Gopalakrishnan Thirunellai Venkitachalam - Research Portfolio</title>
         <meta name="description" content="Graduate Researcher in AI & Robotics Research at Carnegie Mellon University" />

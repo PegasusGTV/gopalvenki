@@ -1,16 +1,17 @@
 import { motion } from 'framer-motion';
 import { useInView } from '../hooks/useInView';
 import { getSectionContent } from '../lib/markdown';
+import { useTheme } from '../contexts/ThemeContext';
 
 const Skills = () => {
   const [ref, isInView] = useInView({ once: true, margin: "-100px" });
   const skillsData = getSectionContent('skills');
+  const { theme } = useTheme();
 
   if (!skillsData) {
     return null;
   }
 
-  // Convert skills object to array of categories
   const skillCategories = Object.entries(skillsData).map(([key, value]) => ({
     title: key
       .split('_')
@@ -21,7 +22,9 @@ const Skills = () => {
   }));
 
   return (
-    <section id="skills" ref={ref} className="py-20 bg-lightNavy/30">
+    <section id="skills" ref={ref} className={`py-20 transition-colors duration-300 ${
+      theme === 'light' ? 'bg-gray-50' : 'bg-lightNavy/30'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -29,9 +32,15 @@ const Skills = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="section-title">Technical Skills</h2>
-          <div className="w-24 h-1 bg-accent mx-auto mb-8"></div>
-          <p className="text-lg text-lightSlate max-w-3xl mx-auto">
+          <h2 className={`section-title ${
+            theme === 'light' ? 'text-gray-900' : 'text-white'
+          }`}>Technical Skills</h2>
+          <div className={`w-24 h-1 mx-auto mb-8 ${
+            theme === 'light' ? 'bg-purple-600' : 'bg-accent'
+          }`}></div>
+          <p className={`text-lg max-w-3xl mx-auto ${
+            theme === 'light' ? 'text-gray-600' : 'text-lightSlate'
+          }`}>
             A comprehensive overview of my technical expertise across programming languages, frameworks, and tools.
           </p>
         </motion.div>
@@ -43,25 +52,37 @@ const Skills = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="card group"
+              className={`group rounded-lg border shadow-lg hover:shadow-xl transition-all duration-300 p-6 ${
+                theme === 'light'
+                  ? 'bg-white border-gray-200 hover:border-purple-500'
+                  : 'bg-lightNavy border-lightestNavy hover:border-accent'
+              }`}
             >
               <div className="p-6">
-                {/* Category Header */}
                 <div className="flex items-center gap-3 mb-4">
                   <div className="text-2xl">{category.icon}</div>
-                  <h3 className="text-xl font-bold text-white group-hover:text-accent transition-colors duration-200">
+                  <h3 className={`text-xl font-bold transition-colors duration-200 ${
+                    theme === 'light'
+                      ? 'text-gray-900 group-hover:text-purple-600'
+                      : 'text-white group-hover:text-accent'
+                  }`}>
                     {category.title}
                   </h3>
                 </div>
 
-                {/* Skills List */}
                 <div className="space-y-2">
                   {category.skills.map((skill, skillIdx) => (
                     <div
                       key={skillIdx}
-                      className="flex items-center gap-2 text-lightSlate hover:text-lightestSlate transition-colors duration-200"
+                      className={`flex items-center gap-2 transition-colors duration-200 ${
+                        theme === 'light'
+                          ? 'text-gray-600 hover:text-gray-700'
+                          : 'text-lightSlate hover:text-lightestSlate'
+                      }`}
                     >
-                      <span className="text-accent text-xs">▹</span>
+                      <span className={`text-xs ${
+                        theme === 'light' ? 'text-purple-600' : 'text-accent'
+                      }`}>▹</span>
                       <span className="text-sm">{skill}</span>
                     </div>
                   ))}
@@ -75,7 +96,6 @@ const Skills = () => {
   );
 };
 
-// Helper function to get icons for skill categories
 function getCategoryIcon(categoryKey) {
   const iconMap = {
     languages: '💻',
@@ -91,4 +111,3 @@ function getCategoryIcon(categoryKey) {
 }
 
 export default Skills;
-

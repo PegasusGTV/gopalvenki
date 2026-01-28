@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion';
 import { useInView } from '../hooks/useInView';
 import { getSectionContent } from '../lib/markdown';
+import { useTheme } from '../contexts/ThemeContext';
 
 const Interests = () => {
   const [ref, isInView] = useInView({ once: true, margin: "-100px" });
   const interestsData = getSectionContent('interests');
+  const { theme } = useTheme();
 
-  // Parse interests from markdown content
   const parseInterests = (content) => {
     if (!content) return [];
     
@@ -72,7 +73,9 @@ const Interests = () => {
   ];
 
   return (
-    <section id="research" ref={ref} className="py-20">
+    <section id="research" ref={ref} className={`py-20 transition-colors duration-300 ${
+      theme === 'light' ? 'bg-white' : 'bg-navy'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -80,9 +83,15 @@ const Interests = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="section-title">{interestsData?.title || 'Research Interests'}</h2>
-          <div className="w-24 h-1 bg-accent mx-auto mb-8"></div>
-          <p className="text-lg text-lightSlate max-w-3xl mx-auto">
+          <h2 className={`section-title ${
+            theme === 'light' ? 'text-gray-900' : 'text-white'
+          }`}>{interestsData?.title || 'Research Interests'}</h2>
+          <div className={`w-24 h-1 mx-auto mb-8 ${
+            theme === 'light' ? 'bg-purple-600' : 'bg-accent'
+          }`}></div>
+          <p className={`text-lg max-w-3xl mx-auto ${
+            theme === 'light' ? 'text-gray-600' : 'text-lightSlate'
+          }`}>
             {interestsData?.description || "My research focuses on motion planning, multi-agent systems, machine learning, and robotics, with emphasis on real-time algorithms for practical applications."}
           </p>
         </motion.div>
@@ -102,16 +111,28 @@ const Interests = () => {
                 transition: { duration: 0.2 }
               }}
               whileTap={{ scale: 0.95 }}
-              className="card group cursor-pointer"
+              className={`group cursor-pointer rounded-lg border shadow-lg hover:shadow-xl transition-all duration-300 p-6 ${
+                theme === 'light'
+                  ? 'bg-white border-gray-200 hover:border-purple-500'
+                  : 'bg-lightNavy border-lightestNavy hover:border-accent'
+              }`}
             >
               <div className="text-center">
                 <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-200">
                   {interest.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-accent transition-colors duration-200">
+                <h3 className={`text-xl font-semibold mb-3 transition-colors duration-200 ${
+                  theme === 'light'
+                    ? 'text-gray-900 group-hover:text-purple-600'
+                    : 'text-white group-hover:text-accent'
+                }`}>
                   {interest.title}
                 </h3>
-                <p className="text-lightSlate group-hover:text-lightestSlate transition-colors duration-200">
+                <p className={`transition-colors duration-200 ${
+                  theme === 'light'
+                    ? 'text-gray-600 group-hover:text-gray-700'
+                    : 'text-lightSlate group-hover:text-lightestSlate'
+                }`}>
                   {interest.description}
                 </p>
               </div>

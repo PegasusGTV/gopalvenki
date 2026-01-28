@@ -1,12 +1,18 @@
 import { motion } from 'framer-motion';
 import { getSectionContent } from '../lib/markdown';
+import { useTheme } from '../contexts/ThemeContext';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const footerData = getSectionContent('footer');
+  const { theme } = useTheme();
 
   return (
-    <footer className="bg-navy border-t border-lightestNavy">
+    <footer className={`border-t transition-colors duration-300 ${
+      theme === 'light'
+        ? 'bg-white border-gray-200'
+        : 'bg-navy border-lightestNavy'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -15,7 +21,9 @@ const Footer = () => {
           className="text-center"
         >
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-            <div className="text-lightSlate">
+            <div className={`${
+              theme === 'light' ? 'text-gray-600' : 'text-lightSlate'
+            }`}>
               {footerData?.copyright_text || `© ${currentYear} Gopalakrishnan Thirunellai Venkitachalam. All rights reserved.`}
             </div>
             
@@ -27,7 +35,11 @@ const Footer = () => {
                   href={footerData.scholar}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-lightSlate hover:text-accent transition-colors duration-200"
+                  className={`transition-colors duration-200 ${
+                    theme === 'light'
+                      ? 'text-gray-600 hover:text-purple-600'
+                      : 'text-lightSlate hover:text-accent'
+                  }`}
                   aria-label="Google Scholar"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -42,7 +54,11 @@ const Footer = () => {
                 href="https://github.com/PegasusGTV"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-lightSlate hover:text-accent transition-colors duration-200"
+                className={`transition-colors duration-200 ${
+                  theme === 'light'
+                    ? 'text-gray-600 hover:text-purple-600'
+                    : 'text-lightSlate hover:text-accent'
+                }`}
                 aria-label="GitHub"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -56,7 +72,11 @@ const Footer = () => {
                 href="https://www.linkedin.com/in/gopal-venki/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-lightSlate hover:text-accent transition-colors duration-200"
+                className={`transition-colors duration-200 ${
+                  theme === 'light'
+                    ? 'text-gray-600 hover:text-purple-600'
+                    : 'text-lightSlate hover:text-accent'
+                }`}
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

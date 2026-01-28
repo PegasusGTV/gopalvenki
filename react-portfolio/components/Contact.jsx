@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion';
 import { useInView } from '../hooks/useInView';
 import { getSectionContent } from '../lib/markdown';
+import { useTheme } from '../contexts/ThemeContext';
 
 const Contact = () => {
   const [ref, isInView] = useInView({ once: true, margin: "-100px" });
   const contactData = getSectionContent('contact');
+  const { theme } = useTheme();
 
   const contactInfo = [
     {
@@ -40,7 +42,9 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" ref={ref} className="py-20">
+    <section id="contact" ref={ref} className={`py-20 transition-colors duration-300 ${
+      theme === 'light' ? 'bg-gray-50' : 'bg-navy'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -48,9 +52,15 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="section-title">{contactData?.title || 'Get In Touch'}</h2>
-          <div className="w-24 h-1 bg-accent mx-auto mb-8"></div>
-          <p className="text-lg text-lightSlate max-w-3xl mx-auto">
+          <h2 className={`section-title ${
+            theme === 'light' ? 'text-gray-900' : 'text-white'
+          }`}>{contactData?.title || 'Get In Touch'}</h2>
+          <div className={`w-24 h-1 mx-auto mb-8 ${
+            theme === 'light' ? 'bg-purple-600' : 'bg-accent'
+          }`}></div>
+          <p className={`text-lg max-w-3xl mx-auto ${
+            theme === 'light' ? 'text-gray-600' : 'text-lightSlate'
+          }`}>
             {contactData?.description || "I'm always interested in discussing new research opportunities, collaborations, and innovative projects in AI and robotics."}
           </p>
         </motion.div>
@@ -74,17 +84,33 @@ const Contact = () => {
                 href={contact.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="card group cursor-pointer text-center hover:border-accent transition-all duration-300"
+                className={`group cursor-pointer text-center rounded-lg border shadow-lg hover:shadow-xl transition-all duration-300 p-6 ${
+                  theme === 'light'
+                    ? 'bg-white border-gray-200 hover:border-purple-500'
+                    : 'bg-lightNavy border-lightestNavy hover:border-accent'
+                }`}
               >
                 <div className="flex flex-col items-center space-y-4">
-                  <div className="text-accent group-hover:text-white transition-colors duration-200">
+                  <div className={`transition-colors duration-200 ${
+                    theme === 'light'
+                      ? 'text-purple-600 group-hover:text-purple-700'
+                      : 'text-accent group-hover:text-white'
+                  }`}>
                     {contact.icon}
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white group-hover:text-accent transition-colors duration-200">
+                    <h3 className={`text-lg font-semibold transition-colors duration-200 ${
+                      theme === 'light'
+                        ? 'text-gray-900 group-hover:text-purple-600'
+                        : 'text-white group-hover:text-accent'
+                    }`}>
                       {contact.type}
                     </h3>
-                    <p className="text-lightSlate group-hover:text-lightestSlate transition-colors duration-200">
+                    <p className={`transition-colors duration-200 ${
+                      theme === 'light'
+                        ? 'text-gray-600 group-hover:text-gray-700'
+                        : 'text-lightSlate group-hover:text-lightestSlate'
+                    }`}>
                       {contact.value}
                     </p>
                   </div>
@@ -93,7 +119,6 @@ const Contact = () => {
             ))}
           </div>
 
-          {/* Call to Action */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
@@ -104,7 +129,11 @@ const Contact = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               href={contactData?.primary_cta_link || "mailto:gopalakt@andrew.cmu.edu"}
-              className="btn-primary text-lg px-8 py-4"
+              className={`text-lg px-8 py-4 rounded-md font-medium transition-all duration-300 ${
+                theme === 'light'
+                  ? 'bg-transparent border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white'
+                  : 'bg-transparent border-2 border-accent text-accent hover:bg-accent hover:text-navy'
+              }`}
             >
               {contactData?.primary_cta || "Send me an email"}
             </motion.a>

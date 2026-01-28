@@ -29,9 +29,9 @@ export default function Home() {
         <AboutSection />
         <Research />
         <PreviousExperience />
+        <Interests />
         <Education />
         <Skills />
-        <Interests />
         <Publications />
         <Projects />
         <Awards />

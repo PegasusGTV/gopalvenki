@@ -65,6 +65,7 @@ function generateContentData() {
     contact: loadMarkdownFile('contact'),
     interests: loadMarkdownFile('interests'),
     research: loadMarkdownFile('research'),
+    experience: loadMarkdownFile('experience'),
     navbar: loadMarkdownFile('navbar'),
     footer: loadMarkdownFile('footer')
   };

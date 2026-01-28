@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar'
 import HeroSection from '../components/HeroSection'
 import AboutSection from '../components/AboutSection'
 import Research from '../components/Research'
+import PreviousExperience from '../components/PreviousExperience'
 import Education from '../components/Education'
 import Skills from '../components/Skills'
 import Interests from '../components/Interests'
@@ -27,6 +28,7 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <Research />
+        <PreviousExperience />
         <Education />
         <Skills />
         <Interests />

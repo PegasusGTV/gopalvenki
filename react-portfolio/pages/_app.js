@@ -1,9 +1,10 @@
 import '../styles/globals.css'
 import Head from 'next/head'
+import { ThemeProvider } from '../contexts/ThemeContext'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
+    <ThemeProvider>
       <Head>
         <title>Gopalakrishnan Thirunellai Venkitachalam - Research Portfolio</title>
         <meta name="description" content="Graduate Researcher in AI & Robotics Research at Carnegie Mellon University" />
@@ -20,7 +21,7 @@ function MyApp({ Component, pageProps }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
       </Head>
       <Component {...pageProps} />
-    </>
+    </ThemeProvider>
   )
 }
 

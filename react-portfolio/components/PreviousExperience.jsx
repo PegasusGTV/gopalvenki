@@ -63,6 +63,27 @@ const PreviousExperience = () => {
   };
 
   const experiences = experienceData?.content ? parseExperience(experienceData.content) : [];
+  const stats = experienceData?.stats || null;
+  const statCards = [
+    {
+      key: 'research_years',
+      value: stats?.research_years,
+      label: 'Years Research Experience'
+    },
+    {
+      key: 'job_years',
+      value: stats?.job_years,
+      label: 'Years Job Experience'
+    },
+    {
+      key: 'publications_patents',
+      value: stats?.publications_patents,
+      label: 'Publications & Patents'
+    }
+  ].filter((c) => {
+    const v = String(c.value ?? '').trim();
+    return v !== '' && v !== '0' && v !== '0+' && v.toLowerCase() !== 'none';
+  });
 
   // Parse markdown formatting
   const parseMarkdown = (text) => {
@@ -289,61 +310,44 @@ const PreviousExperience = () => {
         )}
 
         {/* Summary Statistics */}
-        {experienceData?.stats && (
+        {statCards.length > 0 && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            className={`grid grid-cols-1 gap-6 ${
+              statCards.length === 1
+                ? 'md:grid-cols-1'
+                : statCards.length === 2
+                ? 'md:grid-cols-2'
+                : 'md:grid-cols-3'
+            }`}
           >
-            <div className={`rounded-2xl p-8 text-center border shadow-lg hover:shadow-xl transition-all duration-300 ${
-              theme === 'light'
-                ? 'bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 hover:border-purple-500'
-                : 'bg-gradient-to-br from-accent/20 to-accent/5 border-accent/30 hover:border-accent'
-            }`}>
-              <div className={`text-5xl md:text-6xl font-bold mb-4 ${
-                theme === 'light' ? 'text-purple-600' : 'text-accent'
-              }`}>
-                {experienceData.stats.research_years || '2+'}
+            {statCards.map((card) => (
+              <div
+                key={card.key}
+                className={`rounded-2xl p-8 text-center border shadow-lg hover:shadow-xl transition-all duration-300 ${
+                  theme === 'light'
+                    ? 'bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 hover:border-purple-500'
+                    : 'bg-gradient-to-br from-accent/20 to-accent/5 border-accent/30 hover:border-accent'
+                }`}
+              >
+                <div
+                  className={`text-5xl md:text-6xl font-bold mb-4 ${
+                    theme === 'light' ? 'text-purple-600' : 'text-accent'
+                  }`}
+                >
+                  {card.value}
+                </div>
+                <div
+                  className={`text-xl font-medium ${
+                    theme === 'light' ? 'text-gray-900' : 'text-white'
+                  }`}
+                >
+                  {card.label}
+                </div>
               </div>
-              <div className={`text-xl font-medium ${
-                theme === 'light' ? 'text-gray-900' : 'text-white'
-              }`}>
-                Years Research Experience
-              </div>
-            </div>
-            <div className={`rounded-2xl p-8 text-center border shadow-lg hover:shadow-xl transition-all duration-300 ${
-              theme === 'light'
-                ? 'bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 hover:border-purple-500'
-                : 'bg-gradient-to-br from-accent/20 to-accent/5 border-accent/30 hover:border-accent'
-            }`}>
-              <div className={`text-5xl md:text-6xl font-bold mb-4 ${
-                theme === 'light' ? 'text-purple-600' : 'text-accent'
-              }`}>
-                {experienceData.stats.job_years || '1+'}
-              </div>
-              <div className={`text-xl font-medium ${
-                theme === 'light' ? 'text-gray-900' : 'text-white'
-              }`}>
-                Years Job Experience
-              </div>
-            </div>
-            <div className={`rounded-2xl p-8 text-center border shadow-lg hover:shadow-xl transition-all duration-300 ${
-              theme === 'light'
-                ? 'bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 hover:border-purple-500'
-                : 'bg-gradient-to-br from-accent/20 to-accent/5 border-accent/30 hover:border-accent'
-            }`}>
-              <div className={`text-5xl md:text-6xl font-bold mb-4 ${
-                theme === 'light' ? 'text-purple-600' : 'text-accent'
-              }`}>
-                {experienceData.stats.publications_patents || '1+'}
-              </div>
-              <div className={`text-xl font-medium ${
-                theme === 'light' ? 'text-gray-900' : 'text-white'
-              }`}>
-                Publications & Patents
-              </div>
-            </div>
+            ))}
           </motion.div>
         )}
       </div>

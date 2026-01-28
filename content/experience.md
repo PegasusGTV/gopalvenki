@@ -3,8 +3,8 @@ title: "Previous Experience"
 future_vision: "I am driven to transition robotics from controlled labs to unstructured real-world environments. My focus is on building \"generalist\" robot policies that can reason and adapt on the fly. By combining rigorous motion planning with modern learning techniques, I aim to create autonomous agents that solve meaningful problems—reliably and at scale."
 beyond_research: "I thrive on motion and strategy. I am a competitive athlete in soccer, running, and table tennis, and I enjoy mixing it up with squash or volleyball. To balance the physical intensity, I prioritize mental clarity through meditation and long walks, which is often where I do my best thinking."
 stats:
-  research_years: "2+"
-  job_years: "1+"
+  research_years: "4+"
+  job_years: "0"
   publications_patents: "1+"
 ---
 

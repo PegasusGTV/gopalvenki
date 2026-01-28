@@ -29,8 +29,12 @@ const Research = () => {
       if (title && description) {
         // Determine icon based on title
         let icon = '🔬';
-        if (title.toLowerCase().includes('experience') || title.toLowerCase().includes('graph')) {
+        if (title.toLowerCase().includes('experience') || title.toLowerCase().includes('graph') || title.toLowerCase().includes('tmeg')) {
           icon = '🧠';
+        } else if (title.toLowerCase().includes('constant') || title.toLowerCase().includes('ctmp') || title.toLowerCase().includes('time')) {
+          icon = '⚡';
+        } else if (title.toLowerCase().includes('flow') || title.toLowerCase().includes('locomotion') || title.toLowerCase().includes('matching')) {
+          icon = '🌊';
         } else if (title.toLowerCase().includes('multi-agent') || title.toLowerCase().includes('swarm')) {
           icon = '👥';
         } else if (title.toLowerCase().includes('deception')) {
@@ -51,9 +55,14 @@ const Research = () => {
       icon: "🧠"
     },
     {
-      title: "Constraint-Aware Multi-Agent Path Planning",
-      description: "Developing coordination algorithms for large-scale robotic swarms by leveraging formation constraints and analyzing historical path patterns to identify and exploit collision-free navigation strategies in dense, unstructured environments.",
-      icon: "👥"
+      title: "Constant Time Motion Planning (CTMP) for Mobile Manipulators",
+      description: "Developing algorithms for optimizing dynamic task allocation and motion planning in warehouse robotics. Implementing solutions in C++ & ROS to enhance real-time adaptability and execution efficiency, enabling constant-time path generation for mobile manipulators operating in unstructured environments.",
+      icon: "⚡"
+    },
+    {
+      title: "Flow Matching for Locomotion",
+      description: "Developing novel planning frameworks using flow matching techniques to generate smooth, natural locomotion trajectories for legged robots. Exploring how continuous normalizing flows can capture complex motion patterns and enable efficient trajectory generation for dynamic locomotion tasks.",
+      icon: "🌊"
     }
   ];
 
@@ -101,7 +110,13 @@ const Research = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 30 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          className={`grid gap-6 ${
+            researchAreas.length === 2 
+              ? 'grid-cols-1 md:grid-cols-2' 
+              : researchAreas.length === 3
+              ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+              : 'grid-cols-1 md:grid-cols-2'
+          }`}
         >
           {researchAreas.map((area, index) => (
             <motion.div

@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { getSectionContent } from '../lib/markdown';
@@ -7,15 +7,42 @@ import { useTheme } from '../contexts/ThemeContext';
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [heroData, setHeroData] = useState(null);
+  const [currentGreetingIndex, setCurrentGreetingIndex] = useState(0);
   const router = useRouter();
   const basePath = router.basePath || '/gopalvenki';
   const { theme } = useTheme();
+
+  const greetings = [
+    { text: "Hi! I'm", lang: "English" },
+    { text: "Привет! I'm", lang: "Russian" },
+    { text: "Hola! I'm", lang: "Spanish" },
+    { text: "Bonjour! I'm", lang: "French" },
+    { text: "Hallo! I'm", lang: "German" },
+    { text: "Ciao! I'm", lang: "Italian" },
+    { text: "こんにちは! I'm", lang: "Japanese" },
+    { text: "你好! I'm", lang: "Chinese" },
+    { text: "नमस्ते! I'm", lang: "Hindi" },
+    { text: "안녕하세요! I'm", lang: "Korean" },
+    { text: "مرحبا! I'm", lang: "Arabic" },
+    { text: "Olá! I'm", lang: "Portuguese" },
+    { text: "Hej! I'm", lang: "Swedish" },
+    { text: "Γεια! I'm", lang: "Greek" },
+    { text: "Merhaba! I'm", lang: "Turkish" }
+  ];
 
   useEffect(() => {
     setIsVisible(true);
     const data = getSectionContent('hero');
     setHeroData(data);
   }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentGreetingIndex((prevIndex) => (prevIndex + 1) % greetings.length);
+    }, 2000); // Change greeting every 2 seconds
+
+    return () => clearInterval(interval);
+  }, [greetings.length]);
 
   const scrollToAbout = () => {
     const element = document.querySelector('#about');
@@ -35,17 +62,27 @@ const HeroSection = () => {
           transition={{ duration: 0.8 }}
           className="space-y-8"
         >
-          {/* Greeting */}
+          {/* Greeting - Multiple Languages */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
             transition={{ duration: 0.8, delay: 0.1 }}
+            className="h-8 md:h-10 flex items-center justify-center"
           >
-            <p className={`text-lg md:text-xl font-medium ${
-              theme === 'light' ? 'text-purple-600' : 'text-purple-400'
-            }`}>
-              Привет! I'm
-            </p>
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={currentGreetingIndex}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.5 }}
+                className={`text-lg md:text-xl font-medium ${
+                  theme === 'light' ? 'text-purple-600' : 'text-purple-400'
+                }`}
+              >
+                {greetings[currentGreetingIndex].text}
+              </motion.p>
+            </AnimatePresence>
           </motion.div>
 
           {/* Profile Image */}

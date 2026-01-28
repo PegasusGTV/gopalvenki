@@ -55,11 +55,6 @@ const Research = () => {
       icon: "🧠"
     },
     {
-      title: "Constant Time Motion Planning (CTMP) for Mobile Manipulators",
-      description: "Developing algorithms for optimizing dynamic task allocation and motion planning in warehouse robotics. Implementing solutions in C++ & ROS to enhance real-time adaptability and execution efficiency, enabling constant-time path generation for mobile manipulators operating in unstructured environments.",
-      icon: "⚡"
-    },
-    {
       title: "Flow Matching for Locomotion",
       description: "Developing novel planning frameworks using flow matching techniques to generate smooth, natural locomotion trajectories for legged robots. Exploring how continuous normalizing flows can capture complex motion patterns and enable efficient trajectory generation for dynamic locomotion tasks.",
       icon: "🌊"
